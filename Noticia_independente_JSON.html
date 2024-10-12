@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticia JSON</title>
+    <style>
+        /*Cores*/
+:root{
+    --color-roxo: #4E1F6D;
+    --color-roxo2:rgb(185, 24, 185);
+    --color-branco: white;
+    --color-branco-imutavel: white;
+    --color-preto: black;
+    --color-texto-noticias: #4E1F6D;
+    --color-noticias-navigation: rgb(139,83,143);
+    --color-search: black;
+    --color-header-a: rgb(174, 166, 175);
+    --color-roxinho: #F4E3FF;
+}
+/*Cor da linha horizontal, presente nas noticias semiPrincipais*/
+hr{
+    border-color: var(--color-roxo); 
+}
+.dark-mode:root{
+    --color-branco: #2e2c2c;
+    --color-texto-noticias: rgb(174, 166, 175);
+    --color-search: rgb(175, 166, 166); 
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Times New Roman", Times, serif;
+    background-color: var(--color-branco);
+    color: var(--color-preto);
+    overflow-x: hidden;
+}
+/*Começo da header*/
+header{
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-roxo);
+    height: 150px;
+    width: 100%;
+    box-shadow: 1px 1px 4px var(--color-preto);
+    transition: height 0.3s ease;
+    z-index: 1;
+}
+header.shrink{
+    height: 100px;
+}
+.sidebar.shrink{
+    top: 100px;
+}
+.noticias_navigation.shrink{
+    top: 29px
+}
+.button_header{
+    padding-left: 3%; 
+}
+.button_header svg{
+    width: 50px;
+    height: 50px;
+    fill: var(--color-branco);
+}
+.btn_icon_header{
+    background-color: transparent;
+    cursor: pointer;
+    fill: var(--color-branco-imutavel);
+    color: var(--color-branco-imutavel);
+    border: none;
+}
+.btn_icon_header:hover{
+    transform: scale(1.2)
+}
+.leave svg{
+    color: var(--color-branco-imutavel);
+}
+.Header_logo{
+    color: var(--color-branco);
+    font-size: 100%;
+}
+.Header_logo h1{
+    font-family: Sacramento, cursive;
+    font-size: 50px;
+    color: var(--color-branco-imutavel);
+    text-shadow: 3px 3px 10px var(--color-preto);
+}
+.Header_logo, .Header_navigation, .btn_icon_header{
+    padding: 0 30px;
+    transition: transform 1s ease;
+}
+.Header_navigation{
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-right: 300px;
+}
+.Header_navigation a{
+    text-decoration: none;
+    color: var(--color-preto);
+    white-space: nowrap;
+    border-radius: 7px;
+    text-shadow: 1px 1px 10px var(--color-branco-imutavel);
+    border-color: var(--color-preto);
+    padding: 3px;
+    margin: 5px;
+    font-weight: bold;
+}
+.Header_navigation a:hover{
+    color: var(--color-branco-imutavel);
+    transform: scale(1.2)
+}
+.ativo{
+    background-color: var(--color-branco-imutavel);
+    color: var(--color-roxo);
+    height: 15%;
+}
+.ativo:hover{
+    background-color: var(--color-roxo);
+}
+.noticiasdiv{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+.noticias_navigation{
+    display: none;
+    position: absolute;
+    border-radius: 2%;
+    background-color: var(--color-noticias-navigation);
+    top: 45px;
+    height: 34px;
+    align-items: center;
+    transition: top 0.3s ease;
+    border-radius: 20px;
+}
+.noticias_navigation2{
+    display: flex;
+    flex-direction: row;
+}
+.noticias_navigation.show{
+    display: flex;
+}
+.noticias_navigation a{
+    color: var();
+}
+.search{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.search img{
+    position: absolute;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+.search input{
+    font-family: "Times New Roman", Times, serif;
+    padding-left: 50px;
+    height: 45px;
+    width: 300px;
+    font-size: 16px;
+    border: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    outline: none;
+    background-color: var(--color-branco);
+    color: var(--color-search);
+}
+.btn_icon_header_x{
+    background-color: transparent;
+    cursor: pointer;
+    fill: var(--color-branco);
+    color: var(--color-branco);
+    display: block;
+    border: none;
+    left: 900px;
+}
+.noturno{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: transparent;
+    padding: 20px;
+}
+.noturno svg{
+    padding: 10px;
+}
+
+/*Checkbox*/
+.checkbox-wrapper-54 input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+  }
+
+  .checkbox-wrapper-54 *,
+  .checkbox-wrapper-54 ::after,
+  .checkbox-wrapper-54 ::before {
+    box-sizing: border-box;
+  }
+  .checkbox-wrapper-54 .switch {
+    --width-of-switch: 3.5em;
+    --height-of-switch: 2em;
+    --size-of-icon: 1.4em;
+    --slider-offset: 0.3em;
+    position: relative;
+    width: var(--width-of-switch);
+    height: var(--height-of-switch);
+    display: inline-block;
+  }
+  .checkbox-wrapper-54 .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f4f4f5;
+    transition: .4s;
+    border-radius: 30px;
+  }
+
+  .checkbox-wrapper-54 .slider:before {
+    position: absolute;
+    content: "";
+    height: var(--size-of-icon,1.4em);
+    width: var(--size-of-icon,1.4em);
+    border-radius: 20px;
+    left: var(--slider-offset,0.3em);
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+    ;
+   transition: .4s;
+  }
+
+  .checkbox-wrapper-54 input:checked + .slider {
+    background-color: #303136;
+  }
+
+  .checkbox-wrapper-54 input:checked + .slider:before {
+    left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+    background: #303136;
+    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+  }
+.sidebar{
+    display: flex;
+    position: fixed;
+    flex-direction: column !important;
+    align-items: center;
+    background: var(--color-roxo);
+    height: 100%;
+    top: 150px;
+    width: 25vw;
+    padding: 0px;
+    animation-duration: 1s;
+    transition: top 0.3s ease;
+    margin-left: -100vw;
+    box-shadow: 1px 1px 4px var(--color-preto);
+}
+@keyframes showSidebar {
+    from {margin-left: -100vw;}
+    to {margin-left: -1vw;}
+}
+/*Conteudo*/
+main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 150px;
+    transition: 1s;
+}
+.conteudo{
+    margin-top: 50px;
+    background-color: var(--color-header-a);
+    border-radius: 20px;
+    width: 80vw;
+    animation: slide-in 1s ease forwards; /*Animação da esquerda a direita*/
+}
+/*Animação da esquerda a direita*/
+.item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+/*Animação da esquerda a direita*/
+.item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+/*Animação da esquerda a direita*/
+.item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+/*Animação da esquerda a direita*/
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.titulo{
+    text-align: center;
+    font-size: 50px;
+    margin: 20px;
+}
+.imagem_noticia{
+    display: flex;
+    justify-content: center;
+}
+.imagem_noticia img{
+    width: 1000px;
+    border-radius: 20px;
+    margin: 20px;
+}
+.conteudo_noticia{
+    font-size: 25px;
+    margin: 20px;
+}
+.creditos_autor{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.data_noticia{
+    display: flex;
+    flex-direction: row;
+    font-size: 28px;
+    padding: 20px;
+}
+.autor{
+    font-size: 35px;
+}
+hr{
+    margin: 20px;
+}
+section{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+.conteudo_semi_principal{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100vw;
+}
+.conteudo1, .conteudo2{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-right: 20px;
+    padding: 10px;
+    width: 50vw;
+    animation: slide-in 1s ease forwards; /*Animação da esquerda a direita*/
+}
+.noticia{
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+    margin: 20px;
+}
+.noticia_texto{
+    display: flex;
+    flex-direction: column;
+    color: var(--color-texto-noticias);
+    margin: 5px;
+}
+.noticia img{
+    border-radius: 10px;
+}
+.ratinho_jpg,
+.enchentes{
+    width: 300px;
+    height: 150px;
+}
+.tempo{
+    display: flex;
+    flex-direction: row;
+    font-size: 13px;
+}
+footer{
+    display: flex;
+    margin-top: 100px;
+    background-color: var(--color-roxo);
+    box-shadow: 1px 1px 10px var(--color-preto);
+}
+footer h3{
+    padding: 10px;
+    font-size: 30px;
+    color: var(--color-branco);
+    border: none;
+    text-shadow: 3px 3px 4px var(--color-noticias-navigation);
+}
+.developers{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.gustavo_content, .joao_content, .diego_content, .gabriel_content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.design, .developer, .contenter{
+    align-items: center;
+    background-color: var(--color-footer-autores);
+    box-shadow: 1px 1px 4px var(--color-noticias-navigation);
+    border-radius: 20px;
+    width: 33%;
+    margin: 10px;
+}
+.instagram_img{
+    width: 60px;
+    border-radius: 50%;
+}
+.autores_img{
+    width: 90px;
+    border-radius: 50%;
+    padding: 20px;
+}
+a{
+    text-decoration: none;
+}
+.noticiasExternas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.conteudoJSON{
+    justify-content: center;
+    align-items: center;
+}
+.conteudoJSON h1{
+    color: var(--color-roxo); 
+    font-size: 50px; 
+    text-shadow: 1px 1px 4px var(--color-preto);
+}
+.botaoNoticiaAdicionada{
+    height: 30px;
+    width: 60px;
+    background-color: var(--color-roxo);
+    border: none;
+    border-radius: 20px;
+    color: var(--color-branco-imutavel);
+    box-shadow: 1px 1px 4px var(--color-preto);
+}
+/*COMENTARIOS*/
+.comentario {
+    width: 90%;
+    margin: 10px auto;
+    background-color: var(--color-header-a);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.comentario h2{
+    font-size: 30px;
+}
+form {
+    margin-bottom: 20px;
+}
+.comentario_nome_input{
+    width: 40%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+textarea {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: "Times New Roman", Times, serif;
+}
+.comentario button {
+    padding: 10px 20px;
+    background-color: var(--color-roxo);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.comentario button:hover {
+    background-color: var(--color-noticias-navigation);
+}
+.comment {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.comment p {
+    margin: 0;
+}
+.comment .name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.comment .timestamp {
+    font-size: 0.8em;
+    color: #666;
+}
+.noticia_texto h3{
+    color: var(--color-texto-noticias);
+} 
+.noticia_texto p{
+    color: var(--color-texto-noticias);
+}
+/*Responsividade*/
+@media screen and (max-width: 1155px){
+    .imagem_noticia img{
+        width: 700px;
+    }
+    .titulo{
+        font-size: 40px;
+    }
+    .conteudo_noticia{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 1100px){
+    .imagem_noticia img{
+        width: 500px;
+    }
+    .titulo{
+        font-size: 30px;
+    }
+    .conteudo_noticia{
+        font-size: 15px;
+    }
+    .conteudo_semi_principal{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 980px){
+    .noticia img{
+        width: 250px;
+        height: 100px;
+    }
+}
+@media screen and (max-width: 856px){
+    header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 300px;
+        overflow-x: hidden;
+    }
+    header.shrink{
+        height: 200px;
+    }
+    .sidebar.shrink{
+        top: 200px;
+    }
+    .sidebar{
+        top: 300px;
+    }
+    .Header_navigation{
+        display: flex;
+        position: absolute;
+        left: 0px;
+        top: 20px;
+        flex-direction: column;
+    }
+    .ativo{
+        width:50%;
+    }
+    .leave a{
+        height: 60px;
+    }
+    .search input{
+        border-radius: 20px;
+    }
+    main{
+        top: 300px;
+    }
+    .noticia{
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        margin: 20px;
+    }
+    .comentario{
+        width: 100%;
+    }
+    .noticias_navigation{
+        top: 0px;
+        left: 80px;
+    }
+    .conteudo{
+        margin-top: 200px;
+    }
+    .imagem_noticia img{
+        width: 400px;
+    }
+    .titulo{
+        font-size: 20px;
+    }
+    .developers{
+        flex-direction: column;
+    }
+    .design, .developer, .contenter{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 700px){
+    .imagem_noticia img{
+        width: 300px;
+    }
+    .creditos_autor{
+        display: flex;
+        flex-direction: row;
+    }
+    .autor, .data_noticia{
+        font-size: 20px;
+    }
+    .data_noticia svg{
+        width: 20px;
+    }
+}    
+@media screen and (max-width: 600px){
+    .conteudo_principal,
+    .noticia_principal1,
+    .noticia_principal1 img{
+        width: 430px;    
+    }
+    .texto_sobreposto{
+        top: 75%;
+        font-size: 14px;
+    }
+    .texto_sobreposto p{
+        font-size: 12px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <!--Menu-->
+        <div class="button_header">
+            <button onclick="toggleSidebar()" class="btn_icon_header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </button>
+        </div>
+        <!--Sair-->
+        <div class="leave"><a href="Home.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5.0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5"/>
+              </svg></a>
+        </div>
+        <!--Logo-->
+        <div class="Header_logo">
+            <h1>GØ</h1>
+        </div>
+        <!--Navegação-->
+        <div class="Header_navigation">
+            <a href="Home.html" >Início</a>
+                <div class="noticiasdiv">
+                <a href="#" class="noticias" id="dropdownButton">Noticias</a>
+                    <div class="noticias_navigation" id="dropdown">
+                        <a href="Noticia_recentes.html">Recentes</a>
+                    </div>
+                </div>
+            <a href="Criacao.html">Criar noticias</a>
+        </div>
+        <!--Barra de pesquisa-->
+        <div class="search">
+            <img src="img/lupa.png" alt="?">
+            <input type="text" placeholder="Pesquisar..." id="search" onkeyup="filtrar()">
+        </div>        
+    </header>
+
+    <main id="main">
+        <!--Conteudo da noticia-->
+        <div class="conteudo" id="conteudo">
+            <div class="titulo">
+                <h2><!--Onde será carregado o título da noticia--></h2>
+            </div>
+            <div class="imagem_noticia">
+                <img src=""><!--Onde será carregado a imagem da noticia-->
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="conteudo_noticia">
+                <p><!--Onde será carregado o conteúdo da noticia--></p>
+            </div>
+            <div class="creditos_autor">
+                <div class="data_noticia">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="33" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                    </svg>
+                    <p><!--Onde será carregada a data da noticia--></p>
+                </div>
+                <div class="autor">
+                    <h4><!--Onde será carregado o nome do autor--></h4>
+                </div>
+            </div>
+            </div>
+            <div class="comentario">
+                <h2>Deixe seu comentário</h2>
+                <form id="commentForm">
+                    <label for="name" class="comentario_nome">Nome:</label><br>
+                    <input type="text" class="comentario_nome_input" id="name" name="name" required><br><br>
+                    
+                    <label for="comment">Comentário:</label><br>
+                    <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
+                    
+                    <button type="submit">Enviar</button>
+                </form>
+            
+                <div id="comments">
+                    <!-- Comentários serão carregados aqui -->
+                </div>
+            </div>
+        <!--Mais noticias-->
+        <section id="section">
+            <!-- Primeira coluna de noticias semiPrincipais -->
+        <div class="conteudo_semi_principal">
+            <div class="conteudo1">         
+                <div class="noticia"><a href="Noticia_420.html">
+                    <img src="img/420.jfif" alt="">
+                    <div class="noticia_texto">
+                    <h3>PM do Paraná apreende nota de R$ 420,00</h3><br>
+                    <p>Saiba como identificar notas falsas</p><br>
+                    <div class="tempo" id="tempo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                      </svg></a>
+                    <p>06/07/2024 Autor: Pedro Figueiredo</p>
+                </div>
+                </div>
+            </div>
+            <hr>
+            <div class="noticia"><a href="Noticia_ryu.html">
+                <img src="img/SEMRÉH.jpg" alt="" class="ratinho_jpg" width="300" height="150">
+                <div class="noticia_texto">
+                <h3>Ryu, The Runner mergulha na mitologia grega para contar a própria história</h3><br>
+                <br>
+                <div class="tempo" id="tempo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                      </svg></a>
+                    <p>28/05/2024 Autor: Pedro Figueiredo</p>
+                </div>
+                </div>              
+            </div>
+            <hr>
+        </div>
+             <!-- Segunda coluna de noticias semiPrincipais -->
+        <div class="conteudo2">          
+            <div class="noticia"><a href="Noticia_enchente.html">
+                <img src="img/enchentes.png" alt="" class="enchentes">
+                <div class="noticia_texto">
+                <h3>Enchentes no Rio Grande do Sul: várias cidades inundam após temporais</h3><br>
+                <div class="tempo" id="tempo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                      </svg></a>
+                    <p>20/11/2023 Autor: Silvio Avila</p>
+                </div>
+                </div>
+            </div>
+            <hr>
+            <div class="noticia"><a href="Noticia_descriminalizacao.html">
+                <img src="img/descriminalizacao.jfif" alt="" width="300px" height="150px">
+                <div class="noticia_texto">
+                <h3>STF decide a descriminalização da maconha</h3><br>
+                <br>
+                <div class="tempo" id="tempo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                      </svg></a>
+                    <p>06/07/2024 Autor: Graça Adjuto</p>
+                </div>
+                </div>
+            </div>   
+            <hr>    
+        </div>
+    </div>
+    <div class="noticiasExternas"> 
+        <div class="conteudoAdicionado"></div>
+        <div class="conteudoJSON"><h1>Noticias adicionadas a partir de um arquivo JSON</h1></div>
+    </div>
+        </section>       
+    </main>
+
+    <footer>
+        <div class="developers">
+            <div class="design">
+                <h3>Design: <br> João Henn,</h3>
+                <div class="joao_content">
+                    <img src="img/joao.png" alt="" class="autores_img">
+                    <a href="https://www.instagram.com/joao.henn59/" target="_blank">
+                    <img src="img/instagram.png" alt="" class="instagram_img">
+                    </a>
+                </div>
+                <h3>Diego Ficanha</h3>
+                <div class="diego_content">
+                    <img src="img/diego.png" alt="" class="autores_img">
+                    <a href="https://www.instagram.com/d.ficanha/" target="_blank">
+                    <img src="img/instagram.png" alt="" class="instagram_img">
+                    </a>
+                </div>
+            </div>
+            <div class="developer">
+                <h3>Developer: <br> Gustavo Munchen</h3>
+                <div class="gustavo_content">
+                    <img src="img/gustavo.jfif" alt="" class="autores_img">
+                    <a href="https://www.instagram.com/gustavo_munchen/" target="_blank">
+                    <img src="img/instagram.png" alt="" class="instagram_img">
+                    </a>
+                </div>
+            </div>
+            <div class="contenter">
+                <h3>Content: <br> Gabriel Takai</h3>
+                <div class="gabriel_content">
+                    <img src="img/gabriel.png" alt="" class="autores_img">
+                    <a href="https://www.instagram.com/06_japaa/" target="_blank">
+                    <img src="img/instagram.png" alt="" class="instagram_img">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Barra lateral (SEMPRE ABAIXO, PARA REALIZAR A SOBREPOSIÇÃO)-->
+    <div class="sidebar" id="sidebar">
+        <button onclick="toggleSidebar()" class="btn_icon_header_x">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+              </svg>
+        </button>
+        
+        <div class="noturno">
+              <div class="checkbox-wrapper-54">
+                <label class="switch" for="switch">
+                  <input type="checkbox" id="switch">
+                  <span class="slider"></span>
+                </label>
+              </div>
+        </div>        
+    </div>
+    <script>
+        // Puxa as info
+var html = document.querySelector('html');
+var checkbox = document.getElementById('switch');
+var header = document.getElementById('header');
+var sidebar = document.getElementById('sidebar');
+var main = document.getElementById('main');
+var section = document.getElementById('section');
+var showSidebar = false;
+
+// Funcão para animação da header quando ocorrer a rolagem
+const shrinkOn = 100; // Distância em pixels para iniciar a animação
+
+window.addEventListener('scroll', () => {
+if (window.scrollY > shrinkOn) {
+header.classList.add('shrink');
+sidebar.classList.add('shrink');
+dropdown.classList.add('shrink');
+} else {
+header.classList.remove('shrink');
+sidebar.classList.remove('shrink');
+dropdown.classList.remove('shrink');
+}
+});
+// Funcão para abrir a barra lateral
+function toggleSidebar()
+{
+    showSidebar = !showSidebar;
+    if(showSidebar){
+        sidebar.style.marginLeft = '-1vw';            
+        sidebar.style.animationName = 'showSidebar';
+        main.style.filter = 'blur(2px)';
+    }else{
+        sidebar.style.marginLeft = '-100vw';
+        sidebar.style.animationName = '';
+        main.style.filter = '';
+    }
+}
+// Função para fechar a barra lateral
+function closeSidebar(){
+    if(showSidebar){
+        showSidebar = true;
+        toggleSidebar();
+    }
+}
+// Função para ativar/desativar o modo noturno pelo Checkbox
+
+// Verifica se há uma preferência de tema armazenada e aplica o tema
+const theme = localStorage.getItem('theme');
+if (theme === 'dark') {
+    html.classList.add('dark-mode');
+    checkbox.checked = true;
+}
+
+// Adiciona um listener ao checkbox para alternar o tema e armazenar a preferência
+checkbox.addEventListener('change', function() {
+    html.classList.toggle('dark-mode');
+    if (html.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+});
+
+// Funçao da noticia na header
+const dropdownButton = document.getElementById('dropdownButton');
+const dropdown = document.getElementById('dropdown');
+
+// Mostrar/Esconder dropdown ao clicar no botão
+dropdownButton.addEventListener('click', function(e) {
+    dropdown.classList.toggle('show');
+    e.preventDefault();
+});
+
+// Esconder dropdown ao clicar fora do botão e dropdown
+window.addEventListener('click', function(event) {
+    if (!dropdownButton.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.classList.remove('show');
+    }
+});
+
+// Função de buscar
+function filtrar() {
+    const divAdicionados = document.querySelector('.conteudoAdicionado h1');
+    divAdicionados.style.display = 'none';
+
+    var input, filter, main, section, noticias, i, txtValue;
+
+    input = document.getElementById('search');
+    filter = input.value.toUpperCase();
+    main = document.getElementById('main');
+    section = document.getElementById('section');
+
+    noticias = document.querySelectorAll('.noticia, .conteudo_noticia, .titulo, .comentarios, .conteudo_principal, .noticia_principal1');
+
+    for (i = 0; i < noticias.length; i++) {
+        txtValue = noticias[i].textContent || noticias[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            noticias[i].style.display = "";
+        } else {
+            noticias[i].style.display = "none";
+        }
+    }
+}
+
+// Carregar noticias a partir de um arquivo JSON
+document.addEventListener('DOMContentLoaded', function() {
+    carregarNoticiasDeArquivo('noticias.json');
+});
+
+function carregarNoticiasDeArquivo(jsonFile) {
+    fetch(jsonFile)
+        .then(response => response.json())
+        .then(data => {
+            exibirNoticiasJSON(data);
+        })
+        .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
+}
+
+function exibirNoticiasJSON(data) {
+    const conteudoJSON = document.querySelector('.conteudoJSON');
+
+    data.noticias.forEach(noticia => {
+        const noticiaDiv = document.createElement('div');
+        noticiaDiv.classList.add('noticia');
+
+        const dataFormatada = new Date(noticia.data).toLocaleDateString('pt-BR');
+
+        noticiaDiv.innerHTML = `
+            <a href="Noticia_independente_JSON.html?id=${noticia.id}">
+                <img src="${noticia.imagem}" alt="" class="imagem-noticia" width="300" height="150">
+                <div class="noticia_texto">
+                    <h3>${noticia.titulo}</h3><br>
+                    <div class="tempo">
+                        <p>${dataFormatada} Autor: ${noticia.autor}</p>
+                    </div><hr>
+                </div>
+            </a>`;
+
+        conteudoJSON.appendChild(noticiaDiv);
+    });
+}
+
+// Carregar dados da noticia
+document.addEventListener('DOMContentLoaded', function() {
+    var noticiaId = obterParametroUrl('id');
+    if (noticiaId) {
+        carregarNoticiaIndependente(noticiaId);
+        carregarComentarios(noticiaId);
+    }
+});
+
+function obterParametroUrl(nome) {
+    var url = new URL(window.location.href);
+    return url.searchParams.get(nome);
+}
+
+function carregarNoticiaIndependente(id) {
+    var noticias = JSON.parse(localStorage.getItem('noticias')) || [];
+    var noticia = noticias.find(noticia => noticia.id == id);
+
+    if (!noticia) {
+        fetch('noticias.json')
+            .then(response => response.json())
+            .then(data => {
+                noticia = data.noticias.find(noticia => noticia.id == id);
+                if (noticia) {
+                    exibirNoticia(noticia);
+                } else {
+                    alert('Notícia não encontrada!');
+                }
+            })
+            .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
+    } else {
+        exibirNoticia(noticia);
+    }
+}
+
+function exibirNoticia(noticia) {
+    var data = new Date(noticia.data + 'T00:00:00');
+    var dataFormatada = data.toLocaleDateString('pt-BR');
+
+    document.querySelector('.titulo h2').textContent = noticia.titulo;
+    document.querySelector('.imagem_noticia img').src = noticia.imagem;
+    document.querySelector('.conteudo_noticia').innerHTML = noticia.conteudo.map(paragrafo => `<p>${paragrafo}</p>`).join('');
+    document.querySelector('.data_noticia p').textContent = dataFormatada;
+    document.querySelector('.autor h4').textContent = noticia.autor;
+}
+
+// Comentarios
+function carregarComentarios(noticiaId) {
+    const commentsContainer = document.getElementById('comments');
+    const storedComments = JSON.parse(localStorage.getItem(`comments_noticia_${noticiaId}`)) || [];
+
+    storedComments.forEach(comment => {
+        displayComment(comment, commentsContainer);
+    });
+}
+
+function displayComment(comment, container) {
+    const commentHTML = `
+        <div class="comment">
+            <div class="name">${comment.name}</div>
+            <div class="timestamp">${comment.timestamp}</div>
+            <p>${comment.comment}</p>
+        </div>
+    `;
+    container.innerHTML += commentHTML;
+}
+
+document.getElementById('commentForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = this.name.value;
+    const commentText = this.comment.value;
+    const noticiaId = obterParametroUrl('id');
+
+    if (name && commentText && noticiaId !== null) {
+        const timestamp = new Date().toLocaleString();
+        const comment = { name, comment: commentText, timestamp };
+
+        // Adicionar comentário à lista exibida na página
+        const commentsContainer = document.getElementById('comments');
+        displayComment(comment, commentsContainer);
+
+        // Salvar o novo comentário no LocalStorage específico da notícia
+        const storedComments = JSON.parse(localStorage.getItem(`comments_noticia_${noticiaId}`)) || [];
+        storedComments.push(comment);
+        localStorage.setItem(`comments_noticia_${noticiaId}`, JSON.stringify(storedComments));
+
+        this.reset(); // Limpar formulário após envio
+    } else {
+        alert('Por favor, preencha todos os campos.');
+    }
+});
+
+// Função para carregar as noticias adicionadas
+document.addEventListener('DOMContentLoaded', function() {
+    carregarNoticias();
+});
+
+function carregarNoticias() {
+    var noticias = JSON.parse(localStorage.getItem('noticias')) || [];
+    var conteudoAdicionado = document.querySelector('.conteudoAdicionado');
+
+    if (noticias.length === 0) {
+        conteudoAdicionado.innerHTML = '<h1 style="color: var(--color-roxo); font-size: 50px; text-shadow: 1px 1px 4px var(--color-preto);">Noticias criadas pelo usuario aparecerão aqui.</h1>';
+        return;
+    } else {
+        conteudoAdicionado.innerHTML = '<h1 style="color: var(--color-roxo); font-size: 50px; text-shadow: 1px 1px 4px var(--color-preto);">Veja as noticias criadas por você!</h1>';
+        noticias.forEach(function(noticia, index) {
+            var noticiaDiv = document.createElement('div');
+            noticiaDiv.className = 'noticia';
+            
+            var data = new Date(noticia.data + 'T00:00:00');
+            var dataFormatada = data.toLocaleDateString('pt-BR');
+
+            noticiaDiv.innerHTML = `
+                <a href="Noticia_independente.html?id=${index}">
+                    <img src="${noticia.imagem}" alt="" class="imagem-noticia" width="300" height="150">
+                    <div class="noticia_texto">
+                        <h3>${noticia.titulo}</h3><br>
+                        <div class="tempo">
+                            <p>${dataFormatada} Autor: ${noticia.autor}</p>
+                        </div><hr>
+                    </div>
+                </a>`;
+            conteudoAdicionado.appendChild(noticiaDiv);
+        });
+    }
+}
+    </script>
+</body>
+</html>

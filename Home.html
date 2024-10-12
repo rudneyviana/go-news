@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Projeto NOTICIAS</title>
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body>
+
+    <header id="header">
+        <!--Menu-->
+        <div class="button_header">
+            <button onclick="toggleSidebar()" class="btn_icon_header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </button>
+        </div>
+        <!--Logo-->
+        <div class="Header_logo">
+            <h1>GØ</h1>
+        </div>
+        <!--Navegação-->
+        <div class="Header_navigation">
+            <a href="Home.html" class="ativo">Início</a>
+            <div class="noticiasdiv">
+                <a href="#" id="dropdownButton">Noticias</a>
+                <div class="noticias_navigation" id="dropdown">
+                    <a href="Noticia_recentes.html">Recentes</a>
+                </div>
+            </div>
+            <a href="Criacao.html">Criar noticias</a>
+            <div class="filtrar_data_autor">
+                <a href="#" id="dropdownButtonFiltro">Fitrar</a>
+                <div id="dropdownFiltro" class="dropdownFiltro">
+                    <label for="data">Data:</label>
+                    <input type="date" id="dateFilter" onchange="filtrarData()">
+                    <label for="autor">Autor:</label>
+                    <input type="text" id="autorFilter" onkeydown="filtrarAutor()">
+                </div>
+            </div>
+        </div>
+        <!--Barra de pesquisa-->
+        <div class="search">
+            <img src="img/lupa.png" alt="?">
+            <input type="text" placeholder="Pesquisar..." id="search" onkeyup="filtrar()">
+        </div>        
+    </header>
+    <!-- Corpo das noticias -->
+    <main id="main">
+
+        <!--Caso a busca não ache nada-->
+        <h1 id="buscaNone" class="buscaNone"></h1>
+
+        <!--Primeira noticia-->
+        <div class="conteudo_principal"><a href="Noticia_ryu.html">
+            <div class="noticia_principal1">
+                <img src="img/SEMRÉH.jpg" alt="">
+                <div class="texto_sobreposto">
+                    <h3>Ryu, The Runner mergulha na mitologia grega para contar a própria história</h3>
+                    <p>O trapper lançou em 2024 o disco SEMRÉH, com participações de como BK', Senndy, Jean Tassy e Emitê Único <br> Autor: Pedro Figueiredo</p>
+                    <div class="tempo">
+                        <p style="display: none;">06/07/2024 Autor: Pedro Figueiredo</p>
+                    </div>
+                </div>
+            </div></a>
+        </div>
+
+        <!-- Primeira coluna de noticias semiPrincipais -->
+        <div class="conteudo_semi_principal">
+            <div class="conteudo1">         
+                <div class="noticia" id="noticia"><a href="Noticia_420.html">
+                    <img src="img/420.jfif" alt="">
+                    <div class="noticia_texto">
+                    <h3>PM do Paraná apreende nota de R$ 420,00</h3><br>
+                    <p>Saiba como identificar notas falsas</p><br>
+                    <div class="tempo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                      </svg></a>
+                    <p>06/07/2024 Autor: Pedro Figueiredo</p>
+                </div>
+                </div>
+            </div>
+            <hr><a href="Noticia_ratinho.html">
+            <div class="noticia">
+                <img src="img/Ratinho-escola.jpg" alt="" class="ratinho_jpg" width="300" height="150">
+                <div class="noticia_texto">
+                <h3>Ratinho Júnior anuncia privatização de 200 escolas públicas do Paraná</h3><br>
+                <br>
+                <div class="tempo" id="tempo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                      </svg></a>
+                    <p>25/05/2024 Autor: João Nakamura</p>
+                </div>
+                </div>              
+            </div>
+            <hr>
+        </div>
+
+             <!-- Segunda coluna de noticias semiPrincipais -->
+        <div class="conteudo2">  <a href="Noticia_enchente.html">      
+            <div class="noticia">
+                <img src="img/enchentes.png" alt="" class="enchentes">
+                <div class="noticia_texto">
+                <h3>Enchentes no Rio Grande do Sul: várias cidades inundam após temporais</h3><br>
+                <div class="tempo" id="tempo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                      </svg></a>
+                    <p>20/11/2023 Autor: Silvio Avila</p>
+                </div>
+                </div>
+            </div>
+            <hr>
+            <div class="noticia"> <a href="Noticia_descriminalizacao.html">
+                <img src="img/descriminalizacao.jfif" alt="" width="300px" height="150px">
+                <div class="noticia_texto">
+                <h3>STF decide a descriminalização da maconha</h3><br>
+                <br>
+                <div class="tempo" id="tempo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                      </svg></a>
+                    <p>06/07/2024 Autor: Graça Adjuto</p>
+                </div>
+                </div>
+            </div>   
+            <hr>    
+        </div>
+    </div>
+    <div class="noticiasExternas"> 
+        <div class="conteudoAdicionado"></div>
+        <div class="conteudoJSON"><h1 id="h1JSON">Noticias adicionadas a partir de um arquivo JSON</h1></div>
+    </div>
+    </main>
+    <footer>
+        
+        <!--Footer-->
+        <div class="developers">
+            <div class="design">
+                <h3>Design: <br> João Henn,</h3>
+                <div class="joao_content">
+                    <img src="img/joao.png" alt="" class="autores_img">
+                    <a href="https://www.instagram.com/joao.henn59/" target="_blank">
+                    <img src="img/instagram.png" alt="" class="instagram_img">
+                    </a>
+                </div>
+                <h3>Diego Ficanha</h3>
+                <div class="diego_content">
+                    <img src="img/diego.png" alt="" class="autores_img">
+                    <a href="https://www.instagram.com/d.ficanha/" target="_blank">
+                    <img src="img/instagram.png" alt="" class="instagram_img">
+                    </a>
+                </div>
+            </div>
+            <div class="developer">
+                <h3>Developer: <br> Gustavo Munchen</h3>
+                <div class="gustavo_content">
+                    <img src="img/gustavo.jfif" alt="" class="autores_img">
+                    <a href="https://www.instagram.com/gustavo_munchen/" target="_blank">
+                    <img src="img/instagram.png" alt="" class="instagram_img">
+                    </a>
+                </div>
+            </div>
+            <div class="contenter">
+                <h3>Content: <br> Gabriel Takai</h3>
+                <div class="gabriel_content">
+                    <img src="img/gabriel.png" alt="" class="autores_img">
+                    <a href="https://www.instagram.com/06_japaa/" target="_blank">
+                    <img src="img/instagram.png" alt="" class="instagram_img">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Barra lateral (SEMPRE ABAIXO, PARA REALIZAR A SOBREPOSIÇÃO)-->
+    <div class="sidebar" id="sidebar">
+        <button onclick="toggleSidebar()" class="btn_icon_header_x">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+              </svg>
+        </button>
+        
+        <div class="noturno">
+              <div class="checkbox-wrapper-54">
+                <label class="switch" for="switch">
+                  <input type="checkbox" id="switch">
+                  <span class="slider"></span>
+                </label>
+              </div>
+        </div>        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
