@@ -101,7 +101,7 @@ header.shrink{
     text-shadow: 1px 1px 10px var(--color-branco-imutavel);
     border-color: var(--color-preto);
     padding: 3px;
-    margin: 50px;
+    margin: 5px;
     font-weight: bold;
 }
 .Header_navigation a:hover{
