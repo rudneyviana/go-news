@@ -58,8 +58,8 @@ header.shrink{
     padding-left: 3%; 
 }
 .button_header svg{
-    width: 50px;
-    height: 50px;
+    width: 200px;
+    height: 500px;
     fill: var(--color-branco);
 }
 .btn_icon_header{
