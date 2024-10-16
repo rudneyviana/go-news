@@ -1,6 +1,6 @@
 /*Cores*/
 :root{
-    --color-roxo: #4E1F6D;
+    --color-roxo: #ccc;
     --color-roxo2:rgb(185, 24, 185);
     --color-branco: white;
     --color-branco-imutavel: white;
@@ -187,7 +187,7 @@ header.shrink{
     border-radius: 100%;
 }
 .search input{
-    font-family: "Times New Roman", Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     padding-left: 50px;
     height: 45px;
     width: 300px;
