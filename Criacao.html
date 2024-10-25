@@ -153,9 +153,18 @@ header.shrink{
     background-color: var(--color-roxo);
 }
 .noticiasdiv{
-    display: flex;
     position: relative;
-    flex-direction: column;
+    display: flex;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    border-radius: 20px;
+    background-color: var(--color-branco);
+    box-shadow: 1px 1px 10px var(--color-preto);
+    margin: 10px;
+    cursor: pointer;
 }
 .noticias_navigation{
     display: none;
@@ -681,16 +690,31 @@ a{
                 <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
             </svg>
         </button>
-        <div class="Header_navigation">
-            <a href="Home.html">Início</a>
-            <div class="noticiasdiv">
-                <a href="#" id="dropdownButton">Noticias</a>
-                <div class="noticias_navigation" id="dropdown">
-                    <a href="Noticia_recentes.html">Recentes</a>
-                </div>
+        <!--Navegação-->
+        <section class="Header_navigation">
+
+            <a href="Home.html">
+            <div class="divNavigation">
+            <p>Início</p>
+            </div></a>
+            
+            <div class="noticiasdiv"id="dropdownButton">
+                <p class="pNoticia">Noticias</p> 
+
+                <a href="Noticia_recentes.html" class="teste">             
+                <div class="noticias_navigation" id="dropdown">                   
+                    <p class="pNoticiaDrop" id="dropdownP">Recentes</p>                   
+                </div></a>
+
             </div>
-            <a href="#" class="ativo">Criar noticias</a>
-        </div>
+
+            <a href="Criacao.html">
+            <div class="divNavigation">
+            <p>Criar noticias</p>
+            </div>
+            </a>
+
+        </section>
         <div class="noturno">
             <div class="checkbox-wrapper-54">
                 <label class="switch" for="switch">
