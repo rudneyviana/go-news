@@ -95,11 +95,49 @@ header.shrink{
     transition: transform 1s ease;
 }
 .Header_navigation{
+    position: relative;
     width: 100px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding-right: 300px;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+.divNavigation{
+    position: relative;
+    display: flex;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    border-radius: 20px;
+    background-color: var(--color-branco);
+    box-shadow: 1px 1px 10px var(--color-preto);
+    margin: 10px;
+    cursor: pointer;
+    transition: top 1s ease;
+}
+.Header_navigation p{
+    text-decoration: none;
+    color: var(--color-preto);
+    white-space: nowrap;
+    text-shadow: 1px 1px 10px var(--color-branco-imutavel);
+    border-color: var(--color-preto);
+    padding: 3px;
+    margin: 5px;
+    font-weight: bold;
+    font-size: 22px;
+}
+.Header_navigation a{
+    text-decoration: none;
+    color: var(--color-preto);
+    white-space: nowrap;
+    border-radius: 7px;
+    text-shadow: 1px 1px 10px var(--color-branco-imutavel);
+    border-color: var(--color-preto);
+    padding: 3px;
+    margin: 5px;
+    font-weight: bold;
 }
 .Header_navigation a{
     text-decoration: none;
@@ -646,15 +684,16 @@ textarea {
     </style>
 </head>
 <body>
-
     <header id="header">
         <!--Menu-->
+        
         <div class="button_header">
             <button onclick="toggleSidebar()" class="btn_icon_header">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                 </svg>
             </button>
+            
         </div>
         <!--Sair-->
         <div class="leave"><a href="Home.html">
@@ -665,17 +704,6 @@ textarea {
         <!--Logo-->
         <div class="Header_logo">
             <h1>GØ</h1>
-        </div>
-        <!--Navegação-->
-        <div class="Header_navigation">
-            <a href="Home.html">Início</a>
-                <div class="noticiasdiv">
-                <a href="#" id="dropdownButton">Noticias</a>
-                    <div class="noticias_navigation" id="dropdown">
-                        <a href="Noticia_recentes.html">Recentes</a>
-                    </div>
-                </div>
-            <a href="Criacao.html">Criar noticias</a>
         </div>
         <!--Barra de pesquisa-->
         <div class="search">
@@ -854,6 +882,31 @@ textarea {
               </svg>
         </button>
         
+        <section class="Header_navigation">
+
+            <a href="Home.html">
+            <div class="divNavigation">
+            <p>Início</p>
+            </div></a>
+            
+            <div class="noticiasdiv"id="dropdownButton">
+                <p class="pNoticia">Noticias</p> 
+
+                <a href="Noticia_recentes.html" class="teste">             
+                <div class="noticias_navigation" id="dropdown">                   
+                    <p class="pNoticiaDrop" id="dropdownP">Recentes</p>                   
+                </div></a>
+
+            </div>
+
+            <a href="Criacao.html">
+            <div class="divNavigation">
+            <p>Criar noticias</p>
+            </div>
+            </a>
+
+        </section>
+
         <div class="noturno">
               <div class="checkbox-wrapper-54">
                 <label class="switch" for="switch">
