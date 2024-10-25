@@ -568,6 +568,7 @@ footer h3{
     align-items: center;
     justify-content: space-between;
     margin-right: 20px;
+    background-color: white;
 }
 .gustavo_content, .joao_content, .diego_content, .gabriel_content{
     display: flex;
@@ -578,7 +579,7 @@ footer h3{
 }
 .design, .developer, .contenter{
     align-items: center;
-    background-color: white;
+    background-color: gray;
     box-shadow: 1px 1px 4px var(--color-noticias-navigation);
     border-radius: 20px;
     width: 33%;
