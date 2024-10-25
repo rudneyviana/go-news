@@ -340,7 +340,7 @@ input, textarea{
 .textarea{
     width: 60%;
     min-width: 200px;
-    height: 500px;
+    height: 400px;
     padding: 1%;
     text-align: start;
     border: none;
@@ -360,7 +360,7 @@ input, textarea{
     width: 62%;
 }
 .dataEautor input{
-    width: 40%;
+    width: 25%;
     height: 40px;
     text-align: center;
     font-family: "Times New Roman", Times, serif;
@@ -393,13 +393,13 @@ input, textarea{
     max-width: 100%;
 }
 .submit{
-    width: 80%;
+    width: 20%;
     min-width: 200px;
     height: 100px;
     padding: 1%;
     text-align: center;
     border: none;
-    border-radius: 20px;
+    border-radius: 50px;
     font-size: 100%;
     margin: 40px;
     background-color: var(--color-roxo);
@@ -603,15 +603,15 @@ a{
         <h1>Criação de Noticias</h1>
         <form>
             <input type="text" id="titulo" class="titulo" placeholder="Titulo">
+            <label class="imagem">
+                <input type="file" accept="image/*" id="image" class="image">
+                <span class="imagem_span">Escolha uma imagem</span>
+            </label>
             <textarea id="textarea" class="textarea" placeholder="Conteudo.."></textarea>
             <div class="dataEautor">
                 <input type="date" id="data" placeholder="Data">
                 <input type="text" id="autor" placeholder="Autor">
             </div>
-            <label class="imagem">
-                <input type="file" accept="image/*" id="image" class="image">
-                <span class="imagem_span">Escolha uma imagem</span>
-            </label>
             <input type="button" id="submit" class="submit" value="Enviar" onclick="submitForm()">
         </form>
     </main>
