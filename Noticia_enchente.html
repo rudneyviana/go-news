@@ -14,7 +14,7 @@
     --color-branco-imutavel: white;
     --color-preto: black;
     --color-texto-noticias: #4E1F6D;
-    --color-noticias-navigation: rgb(139,83,143);
+    --color-noticias-navigation: white;
     --color-search: black;
     --color-header-a: rgb(174, 166, 175);
 }
@@ -176,6 +176,7 @@ header.shrink{
     box-shadow: 1px 1px 10px var(--color-preto);
     margin: 10px;
     cursor: pointer;
+    font-size: 22px;
 }
 .noticias_navigation{
     display: none;
@@ -921,14 +922,11 @@ textarea {
             <p>Início</p>
             </div></a>
             
-            <div class="noticiasdiv"id="dropdownButton">
-                <p class="pNoticia">Noticias</p> 
-
-                <a href="Noticia_recentes.html" class="teste">             
-                <div class="noticias_navigation" id="dropdown">                   
-                    <p class="pNoticiaDrop" id="dropdownP">Recentes</p>                   
-                </div></a>
-
+            <div class="noticiasdiv">
+                <a href="#" id="dropdownButton">Noticias</a>
+                <div class="noticias_navigation" id="dropdown">
+                    <a href="Noticia_recentes.html">Recentes</a>
+                </div>
             </div>
 
             <a href="Criacao.html">
