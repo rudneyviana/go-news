@@ -123,7 +123,7 @@ header.shrink{
 }
 .Header_navigation{
     position: relative;
-    width: 100px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -144,7 +144,17 @@ header.shrink{
     cursor: pointer;
     transition: top 1s ease;
 }
-
+.Header_navigation a{
+    text-decoration: none;
+    color: var(--color-preto);
+    white-space: nowrap;
+    border-radius: 7px;
+    text-shadow: 1px 1px 10px var(--color-branco-imutavel);
+    border-color: var(--color-preto);
+    padding: 3px;
+    margin: 5px;
+    font-weight: bold;
+}
 .Header_navigation p{
     text-decoration: none;
     color: var(--color-preto);
@@ -190,6 +200,7 @@ header.shrink{
     box-shadow: 1px 1px 10px var(--color-preto);
     margin: 10px;
     cursor: pointer;
+    font-size: 22px;
 }
 .noticiasdiv.show{
     animation: noticiasDiv 1s forwards;
@@ -208,19 +219,15 @@ header.shrink{
     }
 }
 .noticias_navigation{
-    position: relative;
-    top: 17px;
     display: none;
-    width: 180px;
-    height: 48px;
-    text-align: center;
+    position: absolute;
+    border-radius: 2%;
+    background-color: white;
+    top: 45px;
+    height: 34px;
     align-items: center;
-    justify-content: center;
+    transition: top 0.3s ease;
     border-radius: 20px;
-    margin: 10px;
-    cursor: pointer;
-    border: 1px solid black;
-    z-index: 1;
 }
 .noticias_navigation.show{
     display: flex;
