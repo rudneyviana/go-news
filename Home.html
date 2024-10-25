@@ -17,35 +17,30 @@
                 </svg>
             </button>
         </div>
+        <div class="filtrar_data_autor" id="dropdownDiv">
+            <div class="pFiltroDiv" id="dropdownButtonFiltro">              
+                <p>Filtro</p>
+            </div>
+                <div id="dropdownFiltro" class="dropdownFiltro">
+                    <div class="dataDiv">
+                        <label for="data">Data:</label>
+                        <input type="date" id="dateFilter" onchange="filtrarData()">
+                    </div>
+                    <div class="autorDiv">
+                        <label for="autor">Autor:</label>
+                        <input type="text" id="autorFilter" onkeydown="filtrarAutor()">
+                    </div>
+                </div>
+            </div>
         <!--Logo-->
         <div class="Header_logo">
             <h1>GØ</h1>
         </div>
-        <!--Navegação-->
-        <div class="Header_navigation">
-            <a href="Home.html" class="ativo">Início</a>
-            <div class="noticiasdiv">
-                <a href="#" id="dropdownButton">Noticias</a>
-                <div class="noticias_navigation" id="dropdown">
-                    <a href="Noticia_recentes.html">Recentes</a>
-                </div>
-            </div>
-            <a href="Criacao.html">Criar noticias</a>
-            <div class="filtrar_data_autor">
-                <a href="#" id="dropdownButtonFiltro">Fitrar</a>
-                <div id="dropdownFiltro" class="dropdownFiltro">
-                    <label for="data">Data:</label>
-                    <input type="date" id="dateFilter" onchange="filtrarData()">
-                    <label for="autor">Autor:</label>
-                    <input type="text" id="autorFilter" onkeydown="filtrarAutor()">
-                </div>
-            </div>
-        </div>
         <!--Barra de pesquisa-->
-        <div class="search">
+        <div class="search" id="search">
             <img src="img/lupa.png" alt="?">
-            <input type="text" placeholder="Pesquisar..." id="search" onkeyup="filtrar()">
-        </div>        
+            <input onclick="expandeSearch()" type="text" placeholder="Pesquisar..." id="searchInput" onkeyup="filtrar()">
+        </div>       
     </header>
     <!-- Corpo das noticias -->
     <main id="main">
@@ -140,7 +135,51 @@
         <div class="conteudoJSON"><h1 id="h1JSON">Noticias adicionadas a partir de um arquivo JSON</h1></div>
     </div>
     </main>
-    <footer>
+
+    <div class="sidebar" id="sidebar">
+        <button onclick="toggleSidebar()" class="btn_icon_header_x">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+              </svg>
+        </button>        
+        
+        <!--Navegação-->
+        <section class="Header_navigation">
+
+            <a href="Home.html">
+            <div class="divNavigation">
+            <p>Início</p>
+            </div></a>
+            
+            <div class="noticiasdiv"id="dropdownButton">
+                <p class="pNoticia">Noticias</p> 
+
+                <a href="Noticia_recentes.html" class="teste">             
+                <div class="noticias_navigation" id="dropdown">                   
+                    <p class="pNoticiaDrop" id="dropdownP">Recentes</p>                   
+                </div></a>
+
+            </div>
+
+            <a href="Criacao.html">
+            <div class="divNavigation">
+            <p>Criar noticias</p>
+            </div>
+            </a>
+
+        </section>
+        <div class="noturno">
+            <p>Modo noturno:</p>
+            <div class="checkbox-wrapper-54">
+              <label class="switch" for="switch">
+                <input type="checkbox" id="switch">
+                <span class="slider"></span>
+              </label>
+            </div>
+      </div>
+    </div>
+
+    <footer id="footer">
         
         <!--Footer-->
         <div class="developers">
@@ -181,23 +220,6 @@
         </div>
     </footer>
 
-    <!-- Barra lateral (SEMPRE ABAIXO, PARA REALIZAR A SOBREPOSIÇÃO)-->
-    <div class="sidebar" id="sidebar">
-        <button onclick="toggleSidebar()" class="btn_icon_header_x">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
-              </svg>
-        </button>
-        
-        <div class="noturno">
-              <div class="checkbox-wrapper-54">
-                <label class="switch" for="switch">
-                  <input type="checkbox" id="switch">
-                  <span class="slider"></span>
-                </label>
-              </div>
-        </div>        
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
