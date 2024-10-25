@@ -149,7 +149,6 @@ header.shrink{
     color: var(--color-preto);
     white-space: nowrap;
     border-radius: 7px;
-    text-shadow: 1px 1px 10px var(--color-branco-imutavel);
     border-color: var(--color-preto);
     padding: 3px;
     margin: 5px;
@@ -159,7 +158,7 @@ header.shrink{
     text-decoration: none;
     color: var(--color-preto);
     white-space: nowrap;
-    text-shadow: 1px 1px 10px var(--color-branco-imutavel);
+
     border-color: var(--color-preto);
     padding: 3px;
     margin: 5px;
@@ -180,7 +179,7 @@ header.shrink{
     text-decoration: none;
     color: var(--color-preto);
     white-space: nowrap;
-    text-shadow: 1px 1px 10px var(--color-branco-imutavel);
+   
     border-color: var(--color-preto);
     padding: 3px;
     margin: 5px;
@@ -468,7 +467,7 @@ main{
     font-size: 30px;
     transform: translate(-50%, -50%); 
     color: var(--color-branco-imutavel);
-    text-shadow: 1px 1px 4px var(--color-preto);
+    
     border: none;
     padding: 12px; 
 }
@@ -561,7 +560,7 @@ footer h3{
     font-size: 30px;
     color: var(--color-branco);
     border: none;
-    text-shadow: 3px 3px 4px var(--color-noticias-navigation);
+
 }
 .developers{
     width: 100%;
@@ -579,7 +578,7 @@ footer h3{
 }
 .design, .developer, .contenter{
     align-items: center;
-    background-color: var(--color-footer-autores);
+    background-color: white;
     box-shadow: 1px 1px 4px var(--color-noticias-navigation);
     border-radius: 20px;
     width: 33%;
@@ -609,8 +608,7 @@ a{
 .conteudoJSON h1{
     color: var(--color-roxo); 
     font-size: 50px; 
-    text-shadow: 1px 1px 4px var(--color-preto);
-}
+    }
 .botaoNoticiaAdicionada{
     height: 30px;
     width: 60px;
