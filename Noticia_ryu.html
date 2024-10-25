@@ -225,8 +225,11 @@ header.shrink{
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: transparent;
-    padding: 20px;
+    padding: 7px;
+    border-radius: 20px;
+    background-color: var(--color-branco);
+    box-shadow: 1px 1px 10px var(--color-preto);
+    margin-top: 70px;
 }
 .noturno svg{
     padding: 10px;
@@ -911,6 +914,15 @@ textarea {
             </a>
 
         </section>
+        <div class="noturno">
+            <p>Modo noturno:</p>
+            <div class="checkbox-wrapper-54">
+              <label class="switch" for="switch">
+                <input type="checkbox" id="switch">
+                <span class="slider"></span>
+              </label>
+            </div>
+      </div>
     <script>
         //Puxa as info
 var html             = document.querySelector('html')
