@@ -154,6 +154,10 @@ header.shrink{
     margin: 5px;
     font-weight: bold;
 }
+.Header_navigation a:hover{
+    color: var(--color-branco-imutavel);
+    transform: scale(1.2)}
+    
 .Header_navigation p{
     text-decoration: none;
     color: var(--color-preto);
