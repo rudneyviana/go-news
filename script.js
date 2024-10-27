@@ -5,29 +5,48 @@ var header           = document.getElementById('header');
 var sidebar          = document.getElementById('sidebar');
 var main             = document.getElementById('main');
 var section          = document.getElementById('section');
-var showSidebar      = false;
+let showSidebar = false; // Controla a barra de busca
+let isSidebarOpen = false; // Controla a barra lateral
 
-//Funcão para abrir a barra lateral
-function toggleSidebar()
-{
-    showSidebar = !showSidebar;
-    if(showSidebar){
-        sidebar.style.marginLeft = '-1vw';            
-        sidebar.style.animationName = 'showSidebar';
+// Função para abrir/recolher a barra lateral
+function toggleSidebar() {
+    isSidebarOpen = !isSidebarOpen;
+    const sidebar = document.getElementById('sidebar'); // Supondo que sidebar seja o id da barra lateral
+    const main = document.getElementById('main'); // Supondo que main seja o id do conteúdo principal
+
+    if (isSidebarOpen) {
+        sidebar.style.marginLeft = '0';            
         main.style.filter = 'blur(2px)';
-    }else{
+    } else {
         sidebar.style.marginLeft = '-100vw';
-        sidebar.style.animationName = '';
-        main.style.filter = '';
+        main.style.filter = 'none';
     }
 }
-//Função para fechar a barra lateral
-function closeSidebar(){
-    if(showSidebar){
-        showSidebar = true;
-        toggleSidebar();
+
+// Função para expandir/recolher a barra de busca
+function expandeSearch() {
+    showSidebar = !showSidebar;
+    
+    if (showSidebar) {
+        search.classList.add('expandida');
+    } else {
+        search.classList.remove('expandida');
     }
 }
+
+// Detectar cliques fora da barra de busca
+document.addEventListener('click', function(event) {
+    const searchInput = document.getElementById('searchInput');
+
+    // Verifica se o clique foi fora da barra de busca e se ela está expandida
+    if (!search.contains(event.target) && !searchInput.contains(event.target) && showSidebar) {
+        // Recolhe a barra de busca
+        expandeSearch();
+    }
+    
+});
+
+
 
 // Função para ativar/desativar o modo noturno pelo Checkbox COM LOCAL STORAGE
 
@@ -55,23 +74,22 @@ const dropdown = document.getElementById('dropdown');
 // Mostrar/Esconder dropdown ao clicar no botão
 dropdownButton.addEventListener('click', function(e) {
     dropdown.classList.toggle('show');
+    dropdownButton.classList.toggle('show');
     e.preventDefault()
+});
+document.getElementById('dropdown').addEventListener('click', function(event) {
+    event.stopPropagation(); // Impede que o clique no dropdown propague para o link
 });
 // Funçao do filtro na header
 const dropdownButtonFiltro = document.getElementById('dropdownButtonFiltro');
 const dropdownFiltro = document.getElementById('dropdownFiltro');
+const dropdownDiv = document.getElementById('dropdownDiv');
 
 // Mostrar/Esconder dropdown ao clicar no botão
 dropdownButtonFiltro.addEventListener('click', function(e) {
     dropdownFiltro.classList.toggle('show');
+    dropdownDiv.classList.toggle('show');
     e.preventDefault()
-});
-
-// Esconder dropdown ao clicar fora do botão e dropdown
-window.addEventListener('click', function(event) {
-    if (!dropdownButton.contains(event.target) && !dropdown.contains(event.target)) {
-        dropdown.classList.remove('show');
-    }
 });
 
 //Funcão para animação da header quando ocorrer a rolagem
@@ -83,13 +101,11 @@ header.classList.add('shrink');
 sidebar.classList.add('shrink');
 dropdown.classList.add('shrink');
 dropdownFiltro.classList.add('shrink');
-search.classList.add('shrink');
 } else {
 header.classList.remove('shrink');
 sidebar.classList.remove('shrink');
 dropdown.classList.remove('shrink');
 dropdownFiltro.classList.remove('shrink');
-search.classList.remove('shrink');
 }
 });
 
@@ -101,7 +117,7 @@ function filtrar() {
 
     var input, filter, main, section, noticias, i, txtValue, h1;
 
-    input = document.getElementById('search');
+    input = document.getElementById('searchInput');
     filter = input.value.toUpperCase();
     main = document.getElementById('main');
     section = document.getElementById('section');
@@ -129,7 +145,7 @@ function carregarNoticias() {
     var conteudoAdicionado = document.querySelector('.conteudoAdicionado');
 
     if (noticias.length === 0) {
-        conteudoAdicionado.innerHTML = '<h1 style="color: var(--color-roxo); font-size: 50px; text-shadow: 1px 1px 4px var(--color-preto);">Noticias criadas pelo usuario aparecerão aqui.</h1>';
+        conteudoAdicionado.innerHTML = '';
         return;
     } else {
         conteudoAdicionado.innerHTML = '<h1 style="color: var(--color-roxo); font-size: 50px; text-shadow: 1px 1px 4px var(--color-preto);">Veja as noticias criadas por você!</h1>';
@@ -176,7 +192,6 @@ function filtrarData() {
     const divAdicionados = document.querySelector('.conteudoAdicionado h1')
     const h1JSON = document.getElementById('h1JSON')
     h1JSON.style.display = 'none'
-    divAdicionados.style.display = 'none'
     let hasResults = false;
 
     noticias.forEach(noticia => {
@@ -206,7 +221,6 @@ function filtrarAutor() {
     const divAdicionados = document.querySelector('.conteudoAdicionado h1')
     const h1JSON = document.getElementById('h1JSON')
     h1JSON.style.display = 'none'
-    divAdicionados.style.display = 'none'
     filtrarData.return
     let hasResults = false;
 

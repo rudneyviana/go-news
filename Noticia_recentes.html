@@ -138,18 +138,6 @@ header.shrink{
     margin: 5px;
     font-weight: bold;
 }
-.Header_navigation a:hover{
-    color: var(--color-branco-imutavel);
-    transform: scale(1.2)
-}
-.ativo{
-    background-color: var(--color-branco-imutavel);
-    color: var(--color-roxo);
-    height: 15%;
-}
-.ativo:hover{
-    background-color: var(--color-roxo);
-}
 .noticiasdiv{
     position: relative;
     display: flex;
@@ -165,23 +153,6 @@ header.shrink{
     cursor: pointer;
     font-size: 22px;
 }
-.noticiasdiv:hover{
-    color: var(--color-branco-imutavel);
-    transform: scale(1.2)}
-
-    .noticias_navigation{
-    display: none;
-    position: absolute;
-    border-radius: 2%;
-    background-color: gray;
-    top: 45px;
-    height: 34px;
-    align-items: center;
-    transition: top 0.3s ease;
-    border-radius: 20px;
-    font-size: 15px;
-}
-
 .noticias_navigation2{
     display: flex;
     flex-direction: row;
@@ -197,7 +168,9 @@ header.shrink{
     position: relative;
     display: flex;
     align-items: center;
+    transition: width 0.3s ease;
 }
+
 .search img{
     position: absolute;
     left: 10px;
@@ -205,8 +178,11 @@ header.shrink{
     height: 30px;
     border-radius: 100%;
 }
+.search.expandida{
+    width: 300px;
+}
 .search input{
-    font-family: "Times New Roman", Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     padding-left: 50px;
     height: 45px;
     width: 300px;
@@ -216,7 +192,11 @@ header.shrink{
     border-bottom-left-radius: 20px;
     outline: none;
     background-color: var(--color-branco);
+    box-shadow: 1px 1px 10px var(--color-preto);
     color: var(--color-search);
+}
+.search.shrink{
+    top: 20px;
 }
 .btn_icon_header_x{
     position: relative;
@@ -227,6 +207,50 @@ header.shrink{
     display: block;
     border: none;
     margin-right: -90%;
+}
+.Header_navigation{
+    position: relative;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+.divNavigation{
+    position: relative;
+    display: flex;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    border-radius: 20px;
+    background-color: var(--color-branco);
+    box-shadow: 1px 1px 10px var(--color-preto);
+    margin: 20px;
+    cursor: pointer;
+    transition: top 1s ease;
+}
+.Header_navigation a{
+    text-decoration: none;
+    color: var(--color-preto);
+    white-space: nowrap;
+    border-radius: 7px;
+    border-color: var(--color-preto);
+    padding: 3px;
+    margin: 5px;
+    font-weight: bold;
+}
+.Header_navigation p{
+    text-decoration: none;
+    color: var(--color-preto);
+    white-space: nowrap;
+
+    border-color: var(--color-preto);
+    padding: 3px;
+    margin: 5px;
+    font-weight: bold;
+    font-size: 22px;
 }
 .noturno{
     display: flex;
@@ -242,14 +266,68 @@ header.shrink{
     text-decoration: none;
     color: var(--color-preto);
     white-space: nowrap;
+   
     border-color: var(--color-preto);
     padding: 3px;
     margin: 5px;
     font-weight: bold;
     font-size: 22px;
 }
-.noturno svg{
-    padding: 10px;
+.noticiasdiv{
+    position: relative;
+    display: flex;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    border-radius: 20px;
+    background-color: var(--color-branco);
+    box-shadow: 1px 1px 10px var(--color-preto);
+    margin: 10px;
+    cursor: pointer;
+}
+.noticiasdiv.show{
+    animation: noticiasDiv 1s forwards;
+    transition: height 1s ease;
+}
+.pNoticia{
+    position: absolute;
+    top: 4px;
+}
+@keyframes noticiasDiv{
+    from{
+        height: 50px;
+    }
+    to{
+        height: 100px;
+    }
+}
+.noticias_navigation{
+    position: relative;
+    top: 17px;
+    display: none;
+    width: 180px;
+    height: 48px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+.noticias_navigation.show{
+    display: flex;
+    animation: animacaoNavi 3s forwards;
+}
+@keyframes animacaoNavi{
+    from{
+        margin-left: 2px;
+        border-color: transparent;  
+    }
+    to{
+        border-color: 1px solid black;
+    }
 }
 
 /*Checkbox*/
@@ -319,7 +397,7 @@ header.shrink{
     width: 25vw;
     padding: 0px;
     animation-duration: 1s;
-    transition: top 0.3s ease;
+    transition: margin-left 0.5s ease, top 0.3s ease;
     margin-left: -100vw;
     box-shadow: 1px 1px 4px var(--color-preto);
 }
@@ -583,7 +661,7 @@ a{
         <div class="button_header">
             <button onclick="toggleSidebar()" class="btn_icon_header">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                 </svg>
             </button>
         </div>
@@ -599,13 +677,13 @@ a{
         </div>
         
         <!--Barra de pesquisa-->
-        <div class="search">
+        <div class="search" id="search">
             <img src="img/lupa.png" alt="?">
-            <input type="text" placeholder="Pesquisar..."  id="search" onkeyup="filtrar()">
+            <input onclick="expandeSearch()" type="text" placeholder="Pesquisar..." id="searchInput" onkeyup="filtrar()">
         </div>        
     </header>
 
-    <main>
+    <main id="main">
         <div class="conteudo">
           
             <a href="Noticia_ratinho.html">
@@ -735,11 +813,13 @@ a{
             <p>Início</p>
             </div></a>
             
-            <div class="noticiasdiv">
-                <a href="#" id="dropdownButton">Noticias</a>
-                <div class="noticias_navigation" id="dropdown">
-                    <a href="Noticia_recentes.html">Recentes</a>
-                </div>
+            <div class="noticiasdiv"id="dropdownButton">
+                <p class="pNoticia">Noticias</p> 
+
+                <a href="Noticia_recentes.html" class="teste">             
+                <div class="noticias_navigation" id="dropdown">                   
+                    <p class="pNoticiaDrop" id="dropdownP">Recentes</p>                   
+                </div></a>
 
             </div>
 
@@ -762,35 +842,53 @@ a{
     </div>
 <script>
 //Puxa as info
+//Puxa as info
 var html             = document.querySelector('html')
 var checkbox         = document.getElementById('switch')
 var header           = document.getElementById('header');
 var sidebar          = document.getElementById('sidebar');
 var main             = document.getElementById('main');
 var section          = document.getElementById('section');
-var showSidebar      = false;
+let showSidebar = false; // Controla a barra de busca
+let isSidebarOpen = false; // Controla a barra lateral
 
-//Funcão para abrir a barra lateral
-function toggleSidebar()
-{
-    showSidebar = !showSidebar;
-    if(showSidebar){
-        sidebar.style.marginLeft = '-1vw';            
-        sidebar.style.animationName = 'showSidebar';
+// Função para abrir/recolher a barra lateral
+function toggleSidebar() {
+    isSidebarOpen = !isSidebarOpen;
+    const sidebar = document.getElementById('sidebar'); // Supondo que sidebar seja o id da barra lateral
+    const main = document.getElementById('main'); // Supondo que main seja o id do conteúdo principal
+
+    if (isSidebarOpen) {
+        sidebar.style.marginLeft = '0';            
         main.style.filter = 'blur(2px)';
-    }else{
+    } else {
         sidebar.style.marginLeft = '-100vw';
-        sidebar.style.animationName = '';
-        main.style.filter = '';
+        main.style.filter = 'none';
     }
 }
-//Função para fechar a barra lateral
-function closeSidebar(){
-    if(showSidebar){
-        showSidebar = true;
-        toggleSidebar();
+
+// Função para expandir/recolher a barra de busca
+function expandeSearch() {
+    showSidebar = !showSidebar;
+    
+    if (showSidebar) {
+        search.classList.add('expandida');
+    } else {
+        search.classList.remove('expandida');
     }
 }
+
+// Detectar cliques fora da barra de busca
+document.addEventListener('click', function(event) {
+    const searchInput = document.getElementById('searchInput');
+
+    // Verifica se o clique foi fora da barra de busca e se ela está expandida
+    if (!search.contains(event.target) && !searchInput.contains(event.target) && showSidebar) {
+        // Recolhe a barra de busca
+        expandeSearch();
+    }
+    
+});
 
 // Função para ativar/desativar o modo noturno pelo Checkbox COM LOCAL STORAGE
 
@@ -811,21 +909,28 @@ checkbox.addEventListener('change', function() {
     }
 });
 
-// Funçao da noticia na header
 const dropdownButton = document.getElementById('dropdownButton');
 const dropdown = document.getElementById('dropdown');
 
 // Mostrar/Esconder dropdown ao clicar no botão
 dropdownButton.addEventListener('click', function(e) {
     dropdown.classList.toggle('show');
+    dropdownButton.classList.toggle('show');
     e.preventDefault()
 });
+document.getElementById('dropdown').addEventListener('click', function(event) {
+    event.stopPropagation(); // Impede que o clique no dropdown propague para o link
+});
+// Funçao do filtro na header
+const dropdownButtonFiltro = document.getElementById('dropdownButtonFiltro');
+const dropdownFiltro = document.getElementById('dropdownFiltro');
+const dropdownDiv = document.getElementById('dropdownDiv');
 
-// Esconder dropdown ao clicar fora do botão e dropdown
-window.addEventListener('click', function(event) {
-    if (!dropdownButton.contains(event.target) && !dropdown.contains(event.target)) {
-        dropdown.classList.remove('show');
-    }
+// Mostrar/Esconder dropdown ao clicar no botão
+dropdownButtonFiltro.addEventListener('click', function(e) {
+    dropdownFiltro.classList.toggle('show');
+    dropdownDiv.classList.toggle('show');
+    e.preventDefault()
 });
 
 //Funcão para animação da header quando ocorrer a rolagem
