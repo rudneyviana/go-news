@@ -638,7 +638,7 @@ a{
     position: relative;
     width: 100%;
     justify-content: start;
-    align-items: end;
+    align-items: start;
     margin: 50px;
 }
 .botaoNoticiaAdicionada{
