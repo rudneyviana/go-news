@@ -205,6 +205,10 @@ header.shrink{
     cursor: pointer;
     font-size: 22px;
 }
+.noticiasdiv:hover{
+    color: var(--color-branco-imutavel);
+    transform: scale(1.2)}
+  
 .noticiasdiv.show{
     animation: noticiasDiv 1s forwards;
     transition: height 1s ease;
