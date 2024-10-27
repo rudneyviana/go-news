@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Função de filtrar por data
 function filtrarData() {
     const dateFilter = document.getElementById('dateFilter').value;
-    const noticias = document.querySelectorAll('.noticia, .noticia_principal1');
+    const noticias = document.querySelectorAll('.noticia, .noticia_principal1, .noticia_principal2, .noticia_principal3 ');
     const divAdicionados = document.querySelector('.conteudoAdicionado h1')
     const h1JSON = document.getElementById('h1JSON')
     h1JSON.style.display = 'none'
@@ -209,9 +209,11 @@ function filtrarData() {
 
     const buscaNone = document.getElementById('buscaNone');
     if (!hasResults) {
+        divAdicionados.style.display = 'none'
         buscaNone.textContent = "Nenhuma notícia encontrada.";
     } else {
         buscaNone.textContent = "";
+        divAdicionados.style.display = 'none'
     }
 }
 //Função de filtrar por autor
@@ -240,9 +242,10 @@ function filtrarAutor() {
     const buscaNone = document.getElementById('buscaNone');
     if (!hasResults) {
         buscaNone.textContent = "Nenhuma notícia encontrada.";
-        conteudoAdicionado.style.display = 'none'
+        divAdicionados.style.display = 'none'
     } else {
         buscaNone.textContent = "";
+        divAdicionados.style.display = 'none'
     }
 }
 

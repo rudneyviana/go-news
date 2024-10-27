@@ -488,6 +488,12 @@ main{
 .separaNoticiasPricipais hr{
     margin-bottom: 30px;
 }
+.noticia_principal3{
+    width: 1000px;
+}
+.noticia_principal3 img{
+    height:300px;
+}
 .conteudo_semi_principal{
     display: flex;
     flex-direction: row;
@@ -617,13 +623,24 @@ a{
     align-items: center;
 }
 .conteudoJSON{
-    justify-content: center;
+    position: relative;
+    width: 100%;
+    justify-content: start;
     align-items: center;
+    margin: 50px;
 }
 .conteudoJSON h1{
+    text-shadow: 1px 1px 4px var(--color-preto);
     color: var(--color-roxo); 
     font-size: 50px; 
-    }
+}
+.conteudoAdicionado{
+    position: relative;
+    width: 100%;
+    justify-content: start;
+    align-items: start;
+    margin: 50px;
+}
 .botaoNoticiaAdicionada{
     height: 30px;
     width: 60px;
