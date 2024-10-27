@@ -162,7 +162,6 @@ header.shrink{
     text-decoration: none;
     color: var(--color-preto);
     white-space: nowrap;
-
     border-color: var(--color-preto);
     padding: 3px;
     margin: 5px;
@@ -183,7 +182,6 @@ header.shrink{
     text-decoration: none;
     color: var(--color-preto);
     white-space: nowrap;
-   
     border-color: var(--color-preto);
     padding: 3px;
     margin: 5px;
