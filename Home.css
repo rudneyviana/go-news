@@ -8,8 +8,6 @@
     --color-texto-noticias: black;
     --color-noticias-navigation: rgb(139,83,143);
     --color-search: black;
-    --color-header-a: rgb(174, 166, 175);
-    --color-footer-autores: #502b68;
 }
 /*Cor da linha horizontal, presente nas noticias semiPrincipais*/
 hr{
@@ -30,6 +28,10 @@ body{
     background-color: var(--color-branco);
     color: var(--color-preto);
     overflow-x: hidden;
+    font-family: "Nunito", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
 }
 /*Começo da header*/
 header{
@@ -50,9 +52,6 @@ header.shrink{
 }
 .sidebar.shrink{
     top: 100px;
-}
-.noticias_navigation.shrink{
-    top: 29px
 }
 .button_header{
     padding-left: 3%; 
@@ -144,24 +143,12 @@ header.shrink{
     cursor: pointer;
     transition: top 1s ease;
 }
-.Header_navigation a{
-    text-decoration: none;
-    color: var(--color-preto);
-    white-space: nowrap;
-    border-radius: 7px;
-    border-color: var(--color-preto);
-    padding: 3px;
-    margin: 5px;
-    font-weight: bold;
-}
-.Header_navigation a:hover{
-    color: var(--color-branco-imutavel);
-    transform: scale(1.2)}
-    
+
 .Header_navigation p{
     text-decoration: none;
     color: var(--color-preto);
     white-space: nowrap;
+
     border-color: var(--color-preto);
     padding: 3px;
     margin: 5px;
@@ -182,6 +169,7 @@ header.shrink{
     text-decoration: none;
     color: var(--color-preto);
     white-space: nowrap;
+   
     border-color: var(--color-preto);
     padding: 3px;
     margin: 5px;
@@ -201,12 +189,7 @@ header.shrink{
     box-shadow: 1px 1px 10px var(--color-preto);
     margin: 10px;
     cursor: pointer;
-    font-size: 22px;
 }
-.noticiasdiv:hover{
-    color: var(--color-branco-imutavel);
-    transform: scale(1.2)}
-  
 .noticiasdiv.show{
     animation: noticiasDiv 1s forwards;
     transition: height 1s ease;
@@ -224,16 +207,17 @@ header.shrink{
     }
 }
 .noticias_navigation{
+    position: relative;
+    top: 17px;
     display: none;
-    position: absolute;
-    border-radius: 2%;
-    background-color: gray;
-    top: 45px;
-    height: 34px;
+    width: 180px;
+    height: 48px;
+    text-align: center;
     align-items: center;
-    transition: top 0.3s ease;
+    justify-content: center;
     border-radius: 20px;
-    font-size: 15px;
+    cursor: pointer;
+    border: 1px solid black;
 }
 .noticias_navigation.show{
     display: flex;
@@ -440,7 +424,6 @@ main{
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
     align-items: center;
     transition: 1s;
     padding-top: 200px;
@@ -454,32 +437,56 @@ main{
 }
 .conteudo_principal{
     position: relative;
-    display: inline-block;
-    width: 1000px;
-    top: 30px;
+    display: inline-flex;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
 }
 .noticia_principal1{
-    width: 1000px;
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 30px;
 }
 .noticia_principal1 img{
-    display: block;
+    position: relative;
+    display: flex;
+    width: 100%;
     border-radius: 10px;
-    width: 1000px;
-    border-color: var(--color-preto)
 }
 .texto_sobreposto{
-    position: absolute;
-    top: 84%;
-    left: 34%;
-    font-size: 30px;
-    transform: translate(-50%, -50%); 
-    color: var(--color-branco-imutavel);
-    
+    position: relative;
+    font-size: 30px; 
+    color: var(--color-preto);
     border: none;
     padding: 12px; 
 }
 .texto_sobreposto p{
     font-size: 20px;
+}
+.hrSection1{
+    height: 100%;
+    width: 3px;
+    display: flex;
+}
+.hrSection1 hr {
+    border: 1px solid black;
+}
+.noticia_principal2{
+    width: 500px;
+}
+.noticia_principal2 img{
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.separaNoticiasPricipais{
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+}
+.separaNoticiasPricipais hr{
+    margin-bottom: 30px;
 }
 .conteudo_semi_principal{
     display: flex;
@@ -690,9 +697,6 @@ a{
         top: 40px;
         left: 190px;
         flex-direction: column;
-    }
-    .noticias_navigation.shrink{
-        top: 0px
     }
     main{
         padding-top: 300px;
