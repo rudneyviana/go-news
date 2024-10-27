@@ -242,9 +242,10 @@ function filtrarAutor() {
     const buscaNone = document.getElementById('buscaNone');
     if (!hasResults) {
         buscaNone.textContent = "Nenhuma notícia encontrada.";
-        conteudoAdicionado.style.display = 'none'
+        divAdicionados.style.display = 'none'
     } else {
         buscaNone.textContent = "";
+        divAdicionados.style.display = 'none'
     }
 }
 
