@@ -1048,63 +1048,53 @@ function filtrar() {
     }
 }
 
-// COMENTARIOS
-document.addEventListener('DOMContentLoaded', function() {
-    const commentForm = document.getElementById('commentForm');
+//Comentarios
+function carregarComentarios(noticiaId) {
     const commentsContainer = document.getElementById('comments');
+    const storedComments = JSON.parse(localStorage.getItem(`comments_noticia_${noticiaId}`)) || [];
 
-    // Função para salvar os comentários no LocalStorage
-    function saveComments(comments) {
-        localStorage.setItem('comments', JSON.stringify(comments));
-    }
-
-    // Função para carregar os comentários do LocalStorage
-    function loadComments() {
-        const comments = JSON.parse(localStorage.getItem('comments')) || [];
-        comments.forEach(function(comment) {
-            displayComment(comment);
-        });
-    }
-
-    // Função para exibir um comentário na página
-    function displayComment(comment) {
-        const commentHTML = `
-            <div class="comment">
-                <div class="name">${comment.name}</div>
-                <div class="timestamp">${comment.timestamp}</div>
-                <p>${comment.comment}</p>
-            </div>
-        `;
-        commentsContainer.innerHTML += commentHTML;
-    }
-
-    // Carregar os comentários já existentes ao carregar a página
-    loadComments();
-
-    commentForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const name = this.name.value;
-        const commentText = this.comment.value;
-
-        if (name && commentText) {
-            const timestamp = new Date().toLocaleString();
-            const comment = { name, comment: commentText, timestamp };
-
-            // Adicionar comentário à lista exibida na página
-            displayComment(comment);
-
-            // Salvar o novo comentário no LocalStorage
-            const comments = JSON.parse(localStorage.getItem('comments')) || [];
-            comments.push(comment);
-            saveComments(comments);
-
-            this.reset(); // Limpar formulário após envio
-        } else {
-            alert('Por favor, preencha todos os campos.');
-        }
+    storedComments.forEach(comment => {
+        displayComment(comment, commentsContainer);
     });
+}
+
+function displayComment(comment, container) {
+    const commentHTML = `
+        <div class="comment">
+            <div class="name">${comment.name}</div>
+            <div class="timestamp">${comment.timestamp}</div>
+            <p>${comment.comment}</p>
+        </div>
+    `;
+    container.innerHTML += commentHTML;
+}
+
+document.getElementById('commentForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = this.name.value;
+    const commentText = this.comment.value;
+    const noticiaId = obterParametroUrl('id');
+
+    if (name && commentText && noticiaId !== null) {
+        const timestamp = new Date().toLocaleString();
+        const comment = { name, comment: commentText, timestamp };
+
+        // Adicionar comentário à lista exibida na página
+        const commentsContainer = document.getElementById('comments');
+        displayComment(comment, commentsContainer);
+
+        // Salvar o novo comentário no LocalStorage específico da notícia
+        const storedComments = JSON.parse(localStorage.getItem(`comments_noticia_${noticiaId}`)) || [];
+        storedComments.push(comment);
+        localStorage.setItem(`comments_noticia_${noticiaId}`, JSON.stringify(storedComments));
+
+        this.reset(); // Limpar formulário após envio
+    } else {
+        alert('Por favor, preencha todos os campos.');
+    }
 });
+
 // Função para carregar as noticias adicionadas
 document.addEventListener('DOMContentLoaded', function() {
     carregarNoticias();
