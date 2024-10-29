@@ -22,7 +22,16 @@ function toggleSidebar() {
         main.style.filter = 'none';
     }
 }
-
+document.addEventListener('click', function(event) {
+    const searchInput = document.getElementById('sidebar');
+    
+    // Verifica se o clique foi fora da barra de busca e se ela está expandida
+    if (sidebar.contains(event.target) && !searchInput.contains(event.target) && showSidebar) {
+        // Recolhe a barra de busca
+        toggleSidebar();
+    }
+    
+});
 
 // Função para expandir/recolher a barra de busca
 function expandeSearch() {
@@ -46,6 +55,7 @@ document.addEventListener('click', function(event) {
     }
     
 });
+
 
 
 
