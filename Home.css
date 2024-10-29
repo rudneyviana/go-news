@@ -251,7 +251,7 @@ header.shrink{
 .filtrar_data_autor{
     position: absolute;
     display: flex;
-    left: 65%;
+    left: 25%;
     bottom: 0px;
     width: 60px;
     height: 30px;
