@@ -502,40 +502,62 @@ a{
 /*COMENTARIOS*/
 .comentario {
     width: 90%;
-    margin: 10px auto;
-    background-color: var(--color-header-a);
+    margin: 30px;
+    background-color: var(--color-roxo);
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 10px black;
+    animation: slide-in 1s ease forwards; /*Animação da esquerda a direita*/
+}
+.comentario hr{
+    margin: 0px;
 }
 .comentario h2{
     font-size: 30px;
 }
-form {
-    margin-bottom: 20px;
+.commentForm{
+    display: flex;
+    flex-direction: column;
+}
+input:focus {
+  outline: none;
 }
 .comentario_nome_input{
-    width: 40%;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    width: 20%;
+    height: 30px;
+    border-radius: 10px;
+    padding: 0px;
 }
-textarea {
+.comentario_nome_input input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+}
+.comentario_input{
     width: 80%;
-    padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
     font-family: "Times New Roman", Times, serif;
 }
+.comentario_input input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+}
 .comentario button {
+    margin-top: 50px;
+    margin-bottom: 50px;
     padding: 10px 20px;
-    background-color: var(--color-roxo);
+    width: 100px;
+    background-color: var(--color-footer-autores);
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     cursor: pointer;
+    border: 1px solid black;
 }
 .comentario button:hover {
+    color: var(--color-roxo);
     background-color: var(--color-noticias-navigation);
 }
 .comment {
@@ -763,13 +785,16 @@ textarea {
             </div>
             <div class="comentario">
                 <h2>Deixe seu comentário</h2>
-                <form id="commentForm">
-                    <label for="name" class="comentario_nome">Nome:</label><br>
-                    <input type="text" class="comentario_nome_input" id="name" name="name" required><br><br>
-                    
-                    <label for="comment">Comentário:</label><br>
-                    <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
-                    
+                <form id="commentForm" class="commentForm">
+                    <br>
+                    <div class="comentario_nome_input">
+                        <input type="text" id="name" name="name" required placeholder="Nome...">
+                        <hr>
+                    </div><br>
+                    <div class="comentario_input">
+                        <input id="comment" name="comment" rows="4" required placeholder="Comentario..." class="comentario_input"></input>
+                        <hr>
+                    </div>
                     <button type="submit">Enviar</button>
                 </form>
             
@@ -777,7 +802,6 @@ textarea {
                     <!-- Comentários serão carregados aqui -->
                 </div>
             </div>
-
         <!--Mais noticias-->
         <section id="section">
             <!-- Primeira coluna de noticias semiPrincipais -->
@@ -1042,63 +1066,53 @@ function filtrar() {
     }
 }
 
-// COMENTARIOS
-document.addEventListener('DOMContentLoaded', function() {
-    const commentForm = document.getElementById('commentForm');
+//Comentarios
+function carregarComentarios(noticiaId) {
     const commentsContainer = document.getElementById('comments');
+    const storedComments = JSON.parse(localStorage.getItem(`comments_noticia_${noticiaId}`)) || [];
 
-    // Função para salvar os comentários no LocalStorage
-    function saveComments(comments) {
-        localStorage.setItem('comments_420', JSON.stringify(comments));
-    }
-
-    // Função para carregar os comentários do LocalStorage
-    function loadComments() {
-        const comments = JSON.parse(localStorage.getItem('comments_420')) || [];
-        comments.forEach(function(comment) {
-            displayComment(comment);
-        });
-    }
-
-    // Função para exibir um comentário na página
-    function displayComment(comment) {
-        const commentHTML = `
-            <div class="comment">
-                <div class="name">${comment.name}</div>
-                <div class="timestamp">${comment.timestamp}</div>
-                <p>${comment.comment}</p>
-            </div>
-        `;
-        commentsContainer.innerHTML += commentHTML;
-    }
-
-    // Carregar os comentários já existentes ao carregar a página
-    loadComments();
-
-    commentForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const name = this.name.value;
-        const commentText = this.comment.value;
-
-        if (name && commentText) {
-            const timestamp = new Date().toLocaleString();
-            const comment = { name, comment: commentText, timestamp };
-
-            // Adicionar comentário à lista exibida na página
-            displayComment(comment);
-
-            // Salvar o novo comentário no LocalStorage
-            const comments = JSON.parse(localStorage.getItem('comments_420')) || [];
-            comments.push(comment);
-            saveComments(comments);
-
-            this.reset(); // Limpar formulário após envio
-        } else {
-            alert('Por favor, preencha todos os campos.');
-        }
+    storedComments.forEach(comment => {
+        displayComment(comment, commentsContainer);
     });
+}
+
+function displayComment(comment, container) {
+    const commentHTML = `
+        <div class="comment">
+            <div class="name">${comment.name}</div>
+            <div class="timestamp">${comment.timestamp}</div>
+            <p>${comment.comment}</p>
+        </div>
+    `;
+    container.innerHTML += commentHTML;
+}
+
+document.getElementById('commentForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = this.name.value;
+    const commentText = this.comment.value;
+    const noticiaId = obterParametroUrl('id');
+
+    if (name && commentText && noticiaId !== null) {
+        const timestamp = new Date().toLocaleString();
+        const comment = { name, comment: commentText, timestamp };
+
+        // Adicionar comentário à lista exibida na página
+        const commentsContainer = document.getElementById('comments');
+        displayComment(comment, commentsContainer);
+
+        // Salvar o novo comentário no LocalStorage específico da notícia
+        const storedComments = JSON.parse(localStorage.getItem(`comments_noticia_${noticiaId}`)) || [];
+        storedComments.push(comment);
+        localStorage.setItem(`comments_noticia_${noticiaId}`, JSON.stringify(storedComments));
+
+        this.reset(); // Limpar formulário após envio
+    } else {
+        alert('Por favor, preencha todos os campos.');
+    }
 });
+
 // Função para carregar as noticias adicionadas
 document.addEventListener('DOMContentLoaded', function() {
     carregarNoticias();
