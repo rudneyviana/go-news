@@ -23,6 +23,7 @@ function toggleSidebar() {
     }
 }
 
+
 // Função para expandir/recolher a barra de busca
 function expandeSearch() {
     showSidebar = !showSidebar;
@@ -219,7 +220,7 @@ function filtrarData() {
 //Função de filtrar por autor
 function filtrarAutor() {
     var autorFilter = document.getElementById('autorFilter').value.trim().toLowerCase();
-    const noticias = document.querySelectorAll('.noticia, .noticia_principal1');
+    const noticias = document.querySelectorAll('.noticia, .noticia_principal1, .noticia_principal2, .noticia_principal3 ');
     const divAdicionados = document.querySelector('.conteudoAdicionado h1')
     const h1JSON = document.getElementById('h1JSON')
     h1JSON.style.display = 'none'
