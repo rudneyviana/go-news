@@ -45,7 +45,6 @@ body{
     font-weight: weight;
     font-style: normal;
 }
-/*Começo da header*/
 header{
     display: flex;
     position: fixed;
@@ -55,7 +54,7 @@ header{
     background-color: var(--color-roxo);
     height: 150px;
     width: 100%;
-    box-shadow: 1px 1px 4px var(--color-preto);
+    box-shadow: 0px 1px 10px var(--color-preto);
     transition: height 0.3s ease;
     z-index: 1;
 }
@@ -76,15 +75,12 @@ header.shrink{
 .btn_icon_header{
     background-color: transparent;
     cursor: pointer;
-    fill: var(--color-branco-imutavel);
-    color: var(--color-branco-imutavel);
+    fill: var(--color-branco);
+    color: var(--color-branco);
     border: none;
 }
 .btn_icon_header:hover{
     transform: scale(1.2)
-}
-.leave svg{
-    color: var(--color-branco-imutavel);
 }
 .Header_logo{
     color: var(--color-branco);
@@ -96,13 +92,48 @@ header.shrink{
     color: var(--color-branco-imutavel);
     text-shadow: 3px 3px 10px var(--color-preto);
 }
+.search{
+    width: 130px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: width 0.3s ease;
+}
+
+.search img{
+    position: absolute;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+.search.expandida{
+    width: 300px;
+}
+.search input{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 50px;
+    height: 45px;
+    width: 300px;
+    font-size: 16px;
+    border: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    outline: none;
+    background-color: var(--color-branco);
+    box-shadow: 1px 1px 10px var(--color-preto);
+    color: var(--color-search);
+}
+.search.shrink{
+    top: 20px;
+}
 .Header_logo, .Header_navigation, .btn_icon_header{
     padding: 0 30px;
     transition: transform 1s ease;
 }
 .Header_navigation{
     position: relative;
-    width: 100px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -119,37 +150,21 @@ header.shrink{
     border-radius: 20px;
     background-color: var(--color-branco);
     box-shadow: 1px 1px 10px var(--color-preto);
-    margin: 10px;
+    margin: 20px;
     cursor: pointer;
     transition: top 1s ease;
 }
+
 .Header_navigation p{
     text-decoration: none;
-    color: var(--color-preto);
+    color: var(--color-texto-noticias);
     white-space: nowrap;
+
     border-color: var(--color-preto);
     padding: 3px;
     margin: 5px;
     font-weight: bold;
     font-size: 22px;
-}
-.Header_navigation a{
-    text-decoration: none;
-    color: var(--color-preto);
-    white-space: nowrap;
-    border-radius: 7px;
-    border-color: var(--color-preto);
-    padding: 3px;
-    margin: 5px;
-    font-weight: bold;
-}
-.ativo{
-    background-color: var(--color-branco-imutavel);
-    color: var(--color-roxo);
-    height: 15%;
-}
-.ativo:hover{
-    background-color: var(--color-roxo);
 }
 .noticiasdiv{
     position: relative;
@@ -384,6 +399,86 @@ header.shrink{
 @keyframes showSidebar {
     from {margin-left: -100vw;}
     to {margin-left: -1vw;}
+}
+/*alert*/
+.button{
+    padding: 10px 20px;
+    background-color: #AEA8B0;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover{
+    opacity:0.9;
+}
+button:active{
+    opacity: 0.5;
+}
+.modal{
+    background-color: white;
+    position:absolute;
+    left:50%;
+    top:20px;
+    transform: translateX(-50%);
+    width: 500px;
+    max-width: 90vw;
+    display:flex;
+    flex-direction: column;
+    border-radius: 10px;
+    color: #000000;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    z-index: 200;
+    display: none;
+}
+.modalHeader{
+    background-color: #ffffff;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 10px 20px;
+    display:flex;
+    align-items: center;
+    gap:10px;
+    font-size: 1.7em;
+    font-weight: 700;
+}
+.modalBody{
+    padding:10 px 20 px;
+}
+.modalFooter{
+    padding: 10px 20px 12px;
+    border-top: 1px solid rgb(0, 0, 0);
+}
+@keyframes modalIn {
+    from{
+        transform: translate(-50%, -115%);
+    }
+    to{
+        transform: translate(-50%, 0);
+    }
+}
+@keyframes modalOut {
+    from{
+        transform: translate(-50%, 0);
+    }
+    to{
+        transform: translate(-50%, -115%);
+    }
+}
+@keyframes submitFormIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes submitFormIn {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
 }
 /*CONTEUDO*/
 main{
@@ -674,7 +769,6 @@ a{
         width: 20px;
     }
 }    
-
     </style>
 </head>
 <body>
@@ -700,7 +794,6 @@ a{
         </div>       
     </header>
     <main id="main">
-        
         <form>
             <input type="text" id="titulo" class="titulo" placeholder="Titulo">
             <label class="imagem">
@@ -712,7 +805,17 @@ a{
                 <input type="date" id="data" placeholder="Data">
                 <input type="text" id="autor" placeholder="Autor">
             </div>
-            <input type="button" id="submit" class="submit" value="Enviar" onclick="submitForm()">
+            <div class=modal id="modal">
+                <header class= modalHeader id="mHeader">
+                    <i class="fa fa-info-circle"></i>
+                    <p>Atenção</p>
+                </header>
+                <div class=modalBody id="mBody"></div>
+                <p>Notícia carregada com sucesso!</p>
+                </div>
+                </div>
+            </div>
+            <input type="button" id="submitmodal" class="submit" value="Enviar" onclick="submitForm()">
         
         </form>
     </main>
@@ -946,6 +1049,17 @@ function salvarNoticiaLocal(noticia) {
     noticias.push(noticia);
     localStorage.setItem('noticias', JSON.stringify(noticias));
 }
+/*Função para exibir o alert de noticia salva*/
+const modal = document.getElementById('modal');
+const mHeader = document.getElementById('mHeader');
+const mbody= document.getElementById('mBody');
+const fecharModal= document.getElementById('fecharModal');
+const submitform= document.getElementById('submit');
+console.log(modal, mHeader, mbody, fecharModal, submitform);
+function ativarModal(){
+    modal.style.display='flex';
+}
+
 
 // Funçao da noticia na header
 const dropdownButton = document.getElementById('dropdownButton');

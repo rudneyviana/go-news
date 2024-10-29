@@ -556,7 +556,7 @@ input:focus {
     margin-bottom: 50px;
     padding: 10px 20px;
     width: 100px;
-    background-color: var(--color-footer-autores);
+    background-color: var(--color-preto);
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -1073,7 +1073,7 @@ function filtrar() {
     }
 }
 
-//Comentarios
+// Comentarios
 function carregarComentarios(noticiaId) {
     const commentsContainer = document.getElementById('comments');
     const storedComments = JSON.parse(localStorage.getItem(`comments_noticia_${noticiaId}`)) || [];
@@ -1119,6 +1119,7 @@ document.getElementById('commentForm').addEventListener('submit', function(event
         alert('Por favor, preencha todos os campos.');
     }
 });
+
 
 // Função para carregar as noticias adicionadas
 document.addEventListener('DOMContentLoaded', function() {
