@@ -772,13 +772,16 @@ textarea {
             </div>
             <div class="comentario">
                 <h2>Deixe seu comentário</h2>
-                <form id="commentForm">
-                    <label for="name" class="comentario_nome">Nome:</label><br>
-                    <input type="text" class="comentario_nome_input" id="name" name="name" required><br><br>
-                    
-                    <label for="comment">Comentário:</label><br>
-                    <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
-                    
+                <form id="commentForm" class="commentForm">
+                    <br>
+                    <div class="comentario_nome_input">
+                        <input type="text" id="name" name="name" required placeholder="Nome...">
+                        <hr>
+                    </div><br>
+                    <div class="comentario_input">
+                        <input id="comment" name="comment" rows="4" required placeholder="Comentario..." class="comentario_input"></input>
+                        <hr>
+                    </div>
                     <button type="submit">Enviar</button>
                 </form>
             
@@ -786,7 +789,6 @@ textarea {
                     <!-- Comentários serão carregados aqui -->
                 </div>
             </div>
-
         <!--Mais noticias-->
         <section id="section">
             <!-- Primeira coluna de noticias semiPrincipais -->
