@@ -115,6 +115,7 @@ header.shrink{
 .search.shrink{
     top: 20px;
 }
+
 .Header_logo, .Header_navigation, .btn_icon_header{
     padding: 0 30px;
     transition: transform 1s ease;
@@ -248,12 +249,11 @@ header.shrink{
     }
 }
 .filtrar_data_autor{
-    position: absolute;
     display: flex;
-    left: 25%;
+    left: 20%;
     bottom: 0px;
-    width: 60px;
-    height: 30px;
+    width: 200px;
+    height: 50px;
     justify-items: center;
     border-radius: 20px;
     background-color: var(--color-branco);
@@ -270,6 +270,7 @@ header.shrink{
     align-items: center;
     text-align: center;
     font-weight: bold;
+    
 }
 .dropdownFiltro{
     display: none;
@@ -280,13 +281,14 @@ header.shrink{
     box-shadow: 1px 1px 10px var(--color-preto);
     align-items: center;
     border-radius: 20px;
+    height: 70px;
 }
 .dataDiv, .autorDiv{
     position: relative;
     display: flex;
     flex-direction: column;
     width: 120px;
-    height: 60px;
+    height: 50px;
     padding: 5px;
     margin: 5px;
     border: 1px solid black;
