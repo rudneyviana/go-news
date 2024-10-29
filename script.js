@@ -163,7 +163,7 @@ function carregarNoticias() {
                         <h3>${noticia.titulo}</h3><br>
                         <div class="tempo">
                             <p>${dataFormatada} Autor: ${noticia.autor}</p>
-                        </div><hr>
+                        </div>
                     </div>
                 </a>
                 <button onclick="excluirNoticia(${index})" class = "botaoNoticiaAdicionada">Excluir</button>`;
@@ -279,7 +279,7 @@ function exibirNoticiasJSON(data) {
                     <h3>${noticia.titulo}</h3><br>
                     <div class="tempo">
                         <p>${dataFormatada} Autor: ${noticia.autor}</p>
-                    </div><hr>
+                    </div>
                 </div>
             </a>`;
 

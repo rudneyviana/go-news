@@ -74,6 +74,7 @@ header.shrink{
 .Header_logo{
     color: var(--color-branco);
     font-size: 100%;
+    
 }
 .Header_logo h1{
     font-family: Sacramento, cursive;
@@ -82,7 +83,7 @@ header.shrink{
     text-shadow: 3px 3px 10px var(--color-preto);
 }
 .search{
-    width: 130px;
+    width: 200px;
     position: relative;
     display: flex;
     align-items: center;
