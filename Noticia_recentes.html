@@ -927,17 +927,6 @@ dropdownButton.addEventListener('click', function(e) {
 document.getElementById('dropdown').addEventListener('click', function(event) {
     event.stopPropagation(); // Impede que o clique no dropdown propague para o link
 });
-// Funçao do filtro na header
-const dropdownButtonFiltro = document.getElementById('dropdownButtonFiltro');
-const dropdownFiltro = document.getElementById('dropdownFiltro');
-const dropdownDiv = document.getElementById('dropdownDiv');
-
-// Mostrar/Esconder dropdown ao clicar no botão
-dropdownButtonFiltro.addEventListener('click', function(e) {
-    dropdownFiltro.classList.toggle('show');
-    dropdownDiv.classList.toggle('show');
-    e.preventDefault()
-});
 
 //Funcão para animação da header quando ocorrer a rolagem
 const shrinkOn = 10; // Distância em pixels para iniciar a animação
