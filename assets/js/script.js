@@ -262,7 +262,7 @@ function filtrarAutor() {
 
 // Carregar noticias a partir de um arquivo JSON
 document.addEventListener('DOMContentLoaded', function() {
-    carregarNoticiasDeArquivo('../json/noticias.json');
+    carregarNoticiasDeArquivo('../assets/json/noticias.json');
 });
 
 function carregarNoticiasDeArquivo(jsonFile) {

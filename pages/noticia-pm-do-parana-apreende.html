@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apreenção de Nota Falsa</title>
-    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/img/logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
@@ -756,7 +756,7 @@ input:focus {
         </div>
         <!--Barra de pesquisa-->
         <div class="search">
-            <img src="img/lupa.png" alt="?">
+            <img src="../assets/img/lupa.png" alt="?">
             <input type="text" placeholder="Pesquisar..."  id="search" onkeyup="filtrar()">
         </div>        
     </header>
@@ -768,7 +768,7 @@ input:focus {
                 <h2>PM do Paraná apreende nota de R$ 420,00</h2>
             </div>
             <div class="imagem_noticia">
-                <img src="img/420.png" alt="">
+                <img src="../assets/img/420.png" alt="">
             </div>
             <br>
             <hr>
@@ -816,7 +816,7 @@ input:focus {
             <div class="conteudo1">         
                 <a href="./pages/noticia-ratinho-junior-anuncia-privatizacao.html">
                     <div class="noticia">
-                        <img src="img/Ratinho-escola.jpg" alt="" class="ratinho_jpg" width="300" height="150">
+                        <img src="../assets/img/Ratinho-escola.jpg" alt="" class="ratinho_jpg" width="300" height="150">
                         <div class="noticia_texto">
                         <h3>Ratinho Júnior anuncia privatização de 200 escolas públicas do Paraná</h3><br>
                         <br>
@@ -831,7 +831,7 @@ input:focus {
                     </div>
                     <hr>
             <div class="noticia"><a href="./pages/noticia-ryu-the-runner.html">
-                <img src="img/SEMRÉH.jpg" alt="" class="ratinho_jpg" width="300" height="150">
+                <img src="../assets/img/SEMRÉH.jpg" alt="" class="ratinho_jpg" width="300" height="150">
                 <div class="noticia_texto">
                 <h3>Ryu, The Runner mergulha na mitologia grega para contar a própria história</h3><br>
                 <br>
@@ -849,7 +849,7 @@ input:focus {
              <!-- Segunda coluna de noticias semiPrincipais -->
         <div class="conteudo2">          
             <div class="noticia"><a href="./pages/noticia-enchentes-no-rio-grande-do-sul.html">
-                <img src="img/enchentes.png" alt="" class="enchentes">
+                <img src="../assets/img/enchentes.png" alt="" class="enchentes">
                 <div class="noticia_texto">
                 <h3>Enchentes no Rio Grande do Sul: várias cidades inundam após temporais</h3><br>
                 <div class="tempo" id="tempo">
@@ -863,7 +863,7 @@ input:focus {
             </div>
             <hr>
             <div class="noticia"><a href="./pages/noticia-entenda-a-decisao-do-stf.html">
-                <img src="img/descriminalizacao.jfif" alt="" width="300px" height="150px">
+                <img src="../assets/img/descriminalizacao.jfif" alt="" width="300px" height="150px">
                 <div class="noticia_texto">
                 <h3>STF decide a descriminalização da maconha</h3><br>
                 <br>
@@ -891,34 +891,34 @@ input:focus {
             <div class="design">
                 <h3>Design: <br> João Henn,</h3>
                 <div class="joao_content">
-                    <img src="img/joao.png" alt="" class="autores_img">
+                    <img src="../assets/img/joao.png" alt="" class="autores_img">
                     <a href="https://www.instagram.com/joao.henn59/" target="_blank">
-                    <img src="img/instagram.png" alt="" class="instagram_img">
+                    <img src="../assets/img/instagram.png" alt="" class="instagram_img">
                     </a>
                 </div>
                 <h3>Diego Ficanha</h3>
                 <div class="diego_content">
-                    <img src="img/diego.png" alt="" class="autores_img">
+                    <img src="../assets/img/diego.png" alt="" class="autores_img">
                     <a href="https://www.instagram.com/d.ficanha/" target="_blank">
-                    <img src="img/instagram.png" alt="" class="instagram_img">
+                    <img src="../assets/img/instagram.png" alt="" class="instagram_img">
                     </a>
                 </div>
             </div>
             <div class="developer">
                 <h3>Developer: <br> Gustavo Munchen</h3>
                 <div class="gustavo_content">
-                    <img src="img/gustavo.jfif" alt="" class="autores_img">
+                    <img src="../assets/img/gustavo.jfif" alt="" class="autores_img">
                     <a href="https://www.instagram.com/gustavo_munchen/" target="_blank">
-                    <img src="img/instagram.png" alt="" class="instagram_img">
+                    <img src="../assets/img/instagram.png" alt="" class="instagram_img">
                     </a>
                 </div>
             </div>
             <div class="contenter">
                 <h3>Content: <br> Gabriel Takai</h3>
                 <div class="gabriel_content">
-                    <img src="img/gabriel.png" alt="" class="autores_img">
+                    <img src="../assets/img/gabriel.png" alt="" class="autores_img">
                     <a href="https://www.instagram.com/06_japaa/" target="_blank">
-                    <img src="img/instagram.png" alt="" class="instagram_img">
+                    <img src="../assets/img/instagram.png" alt="" class="instagram_img">
                     </a>
                 </div>
             </div>
@@ -1173,7 +1173,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Carregar noticias a partir de um arquivo JSON
 document.addEventListener('DOMContentLoaded', function() {
-    carregarNoticiasDeArquivo('../json/noticias.json');
+    carregarNoticiasDeArquivo('../assets/json/noticias.json');
 });
 
 function carregarNoticiasDeArquivo(jsonFile) {
