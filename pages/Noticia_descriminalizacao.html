@@ -813,7 +813,7 @@ input:focus {
             <!-- Primeira coluna de noticias semiPrincipais -->
         <div class="conteudo_semi_principal">
             <div class="conteudo1">         
-                <div class="noticia" onclick=""><a href="Noticia_420.html">
+                <div class="noticia" onclick=""><a href="./pages/Noticia_420.html">
                     <img src="img/420.jfif" alt="">
                     <div class="noticia_texto">
                     <h3>PM do Paraná apreende nota de R$ 420,00</h3><br>
@@ -828,7 +828,7 @@ input:focus {
                 </div>
             </div>
             <hr>
-            <div class="noticia"><a href="Noticia_ryu.html">
+            <div class="noticia"><a href="./pages/Noticia_ryu.html">
                 <img src="img/SEMRÉH.jpg" alt="" class="ratinho_jpg" width="300" height="150">
                 <div class="noticia_texto">
                 <h3>Ryu, The Runner mergulha na mitologia grega para contar a própria história</h3><br>
@@ -846,7 +846,7 @@ input:focus {
         </div>
              <!-- Segunda coluna de noticias semiPrincipais -->
         <div class="conteudo2">          
-            <div class="noticia"><a href="Noticia_enchente.html">
+            <div class="noticia"><a href="./pages/Noticia_enchente.html">
                 <img src="img/enchentes.png" alt="" class="enchentes">
                 <div class="noticia_texto">
                 <h3>Enchentes no Rio Grande do Sul: várias cidades inundam após temporais</h3><br>
@@ -860,7 +860,7 @@ input:focus {
                 </div>
             </div>
             <hr>
-            <a href="Noticia_ratinho.html">
+            <a href="./pages/Noticia_ratinho.html">
                 <div class="noticia">
                     <img src="img/Ratinho-escola.jpg" alt="" class="ratinho_jpg" width="300" height="150">
                     <div class="noticia_texto">
@@ -941,12 +941,12 @@ input:focus {
             <div class="noticiasdiv">
                 <a href="#" id="dropdownButton">Noticias</a>
                 <div class="noticias_navigation" id="dropdown">
-                    <a href="Noticia_recentes.html">Recentes</a>
+                    <a href="./pages/Noticia_recentes.html">Recentes</a>
                 </div>
 
             </div>
 
-            <a href="Criacao.html">
+            <a href="./pages/Criacao.html">
             <div class="divNavigation">
             <p>Criar noticias</p>
             </div>
@@ -1139,7 +1139,7 @@ function carregarNoticias() {
             var dataFormatada = data.toLocaleDateString('pt-BR');
 
             noticiaDiv.innerHTML = `
-                <a href="Noticia_independente.html?id=${index}">
+                <a href="./pages/Noticia_independente.html?id=${index}">
                     <img src="${noticia.imagem}" alt="" class="imagem-noticia" width="300" height="150">
                     <div class="noticia_texto">
                         <h3>${noticia.titulo}</h3><br>
@@ -1191,7 +1191,7 @@ function exibirNoticiasJSON(data) {
         const dataFormatada = new Date(noticia.data).toLocaleDateString('pt-BR');
 
         noticiaDiv.innerHTML = `
-            <a href="Noticia_independente_JSON.html?id=${noticia.id}">
+            <a href="./pages/Noticia_independente_JSON.html?id=${noticia.id}">
                 <img src="${noticia.imagem}" alt="" class="imagem-noticia" width="300" height="150">
                 <div class="noticia_texto">
                     <h3>${noticia.titulo}</h3><br>

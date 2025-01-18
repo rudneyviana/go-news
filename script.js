@@ -168,7 +168,7 @@ function carregarNoticias() {
             var dataFormatada = data.toLocaleDateString('pt-BR');
 
             noticiaDiv.innerHTML = `
-                <a href="Noticia_independente.html?id=${index}">
+                <a href="./pages/Noticia_independente.html?id=${index}">
                     <img src="${noticia.imagem}" alt="" class="imagem-noticia" width="300" height="150">
                     <div class="noticia_texto">
                         <h3>${noticia.titulo}</h3><br>
@@ -284,7 +284,7 @@ function exibirNoticiasJSON(data) {
         const dataFormatada = new Date(noticia.data).toLocaleDateString('pt-BR');
 
         noticiaDiv.innerHTML = `
-            <a href="Noticia_independente_JSON.html?id=${noticia.id}">
+            <a href="./pages/Noticia_independente_JSON.html?id=${noticia.id}">
                 <img src="${noticia.imagem}" alt="" class="imagem-noticia" width="300" height="150">
                 <div class="noticia_texto">
                     <h3>${noticia.titulo}</h3><br>
