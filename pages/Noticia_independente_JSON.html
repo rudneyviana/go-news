@@ -1056,7 +1056,7 @@ function filtrar() {
 
 // Carregar noticias a partir de um arquivo JSON
 document.addEventListener('DOMContentLoaded', function() {
-    carregarNoticiasDeArquivo('noticias.json');
+    carregarNoticiasDeArquivo('../json/noticias.json');
 });
 
 function carregarNoticiasDeArquivo(jsonFile) {
@@ -1111,7 +1111,7 @@ function carregarNoticiaIndependente(id) {
     var noticia = noticias.find(noticia => noticia.id == id);
 
     if (!noticia) {
-        fetch('noticias.json')
+        fetch('../json/noticias.json')
             .then(response => response.json())
             .then(data => {
                 noticia = data.noticias.find(noticia => noticia.id == id);
