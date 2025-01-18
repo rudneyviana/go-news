@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desenvoltecj</title>
+    <title>Privatização das escolas</title>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +12,7 @@
         /*Cores*/
 :root{
     --color-roxo: #AEA8B0;
+    ;
     --color-roxo2:rgb(185, 24, 185);
     --color-branco: white;
     --color-branco-imutavel: white;
@@ -39,10 +40,6 @@ body{
     background-color: var(--color-branco);
     color: var(--color-preto);
     overflow-x: hidden;
-    font-family: "Nunito", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
 }
 /*Começo da header*/
 header{
@@ -121,19 +118,9 @@ header.shrink{
     border-radius: 20px;
     background-color: var(--color-branco);
     box-shadow: 1px 1px 10px var(--color-preto);
-    margin: 10px;
+    margin: 20px;
     cursor: pointer;
     transition: top 1s ease;
-}
-.Header_navigation a{
-    text-decoration: none;
-    color: var(--color-preto);
-    white-space: nowrap;
-    border-radius: 7px;
-    border-color: var(--color-preto);
-    padding: 3px;
-    margin: 5px;
-    font-weight: bold;
 }
 .Header_navigation p{
     text-decoration: none;
@@ -145,8 +132,16 @@ header.shrink{
     font-weight: bold;
     font-size: 22px;
 }
-
-
+.Header_navigation a{
+    text-decoration: none;
+    color: var(--color-preto);
+    white-space: nowrap;
+    border-radius: 7px;
+    border-color: var(--color-preto);
+    padding: 3px;
+    margin: 5px;
+    font-weight: bold;
+}
 .Header_navigation a:hover{
     color: var(--color-branco-imutavel);
     transform: scale(1.2)
@@ -170,20 +165,24 @@ header.shrink{
     border-radius: 20px;
     background-color: var(--color-branco);
     box-shadow: 1px 1px 10px var(--color-preto);
-    margin: 20px;
+    margin: 10px;
     cursor: pointer;
     font-size: 22px;
 }
+.noticiasdiv:hover{
+    color: var(--color-branco-imutavel);
+    transform: scale(1.2)}
 .noticias_navigation{
     display: none;
     position: absolute;
     border-radius: 2%;
-    background-color: var(--color-noticias-navigation);
+    background-color: gray;
     top: 45px;
     height: 34px;
     align-items: center;
     transition: top 0.3s ease;
     border-radius: 20px;
+    font-size: 15px;
 }
 .noticias_navigation2{
     display: flex;
@@ -487,6 +486,7 @@ footer h3{
     border-radius: 20px;
     width: 33%;
     margin: 10px;
+
 }
 .instagram_img{
     width: 60px;
@@ -727,16 +727,15 @@ input:focus {
     </style>
 </head>
 <body>
+
     <header id="header">
         <!--Menu-->
-        
         <div class="button_header">
             <button onclick="toggleSidebar()" class="btn_icon_header">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                 </svg>
             </button>
-            
         </div>
         <!--Sair-->
         <div class="leave"><a href="index.html">
@@ -748,6 +747,7 @@ input:focus {
         <div class="Header_logo">
             <h1>GØ</h1>
         </div>
+        
         <!--Barra de pesquisa-->
         <div class="search">
             <img src="img/lupa.png" alt="?">
@@ -757,27 +757,24 @@ input:focus {
 
     <main id="main">
         <!--Conteudo da noticia-->
-        <div class="conteudo">
+        <div class="conteudo" id="conteudo">
             <div class="titulo">
-
-                <h2>O colégio estadual João Manoel Mondrone apresenta a primeira edição da amostra "Desenvoltech"</h2>
+                <h2>Ratinho Júnior anuncia privatização de 200 escolas públicas do Paraná</h2>
             </div>
             <div class="imagem_noticia">
-                <img src="img/image_transparent_improved.png" alt="">
+                <img src="img/Ratinho-escola.jpg" alt="">
             </div>
             <br>
             <hr>
             <br>
             <div class="conteudo_noticia">
-                <p>Em 2024, o Colégio João Manoel Mondrone orgulhosamente apresenta a Desenvoltech, uma exposição que promete destacar o talento e a criatividade dos alunos dos cursos de Tecnologia da Informação (T.I.) e Análise e Desenvolvimento de Sistemas. O evento acontecerá nos dias 29 e 30 de outubro, das 19h30 às 22h, nas dependências do colégio.
-
-                    A Desenvoltech é uma oportunidade única para o público conhecer de perto os projetos desenvolvidos pelos alunos, que foram desafiados a criar soluções inovadoras e criativas nas suas áreas de estudo. Cada turma ficará responsável por um projeto específico, sempre com foco no que há de mais atual em tecnologia e desenvolvimento de sistemas. A feira reunirá ideias e protótipos que visam resolver problemas reais, trazendo à tona o que há de mais promissor no campo da tecnologia. <br><br>
-                    
-                    O evento será aberto ao público no dia 30 de outubro (quarta-feira), das 19h30 às 22h, e promete atrair visitantes interessados em conhecer o trabalho dos futuros profissionais de T.I. e programação. Se você é entusiasta de tecnologia, estudante ou profissional da área, ou apenas tem curiosidade para ver o que a nova geração está criando, não deixe de visitar a Desenvoltech. <br><br>
-                    
-                    Venha prestigiar e apoiar os alunos do Colégio João Manoel Mondrone, explorar ideias inovadoras e, quem sabe, até se inspirar para criar seus próprios projetos no futuro! Esperamos por você! <br><br>
-
-                </p>
+                <p>O governador Ratinho Júnior (PSD) anunciou pelas redes sociais nesta semana a criação de um projeto para privatizar escolas públicas no Paraná. Batizado de “Parceiro da Escola”, a proposta visa entregar 200 unidades de ensino ao setor privado. O projeto, que deve ser encaminhado à Assembleia Legislativa do Paraná (Alep) na próxima semana, já é aplicado em duas escolas estaduais. De acordo com a APP Sindicato, entidade que representa a educação no Paraná, o Governo Ratinho Jr quer acabar com a escola pública no Estado. </p>
+                <br>
+                <p>Para a professora e presidenta da APP, Walkiria Mazeto, só à união da categoria será capaz de barrar o processo. “Sozinho é mais fácil ser punido. Todos juntos, o estado não tem condição de punição. Ele não vai demitir 60 mil professores(as), não vai demitir 30 mil PSS, não vai demitir 15 mil funcionários(as) de escola”, afirma.</p>
+                <p>“Nós precisaremos nos desafiar nesse momento a enfrentar essa estratégia usada pelo estado contra nós. Não é possível que nós sejamos mais de 60 mil professores(as), mais de 15 mil funcionários(as), chegando a quase 80 mil trabalhadores(as) da educação, e possamos nos submeter a essa estratégia do medo”, argumenta.</p>
+                <br><br>
+                <p>Ratinho negou que pretende privatizar parte das escolas públicas no estado. Segundo ele, apenas os serviços administrativos serão terceirizados. A ideia, de acordo com o governador, “não é nenhuma novidade” e as unidades que já fazem parte do projeto “tiveram uma transformação fantástica”. “Facilitação para o diretor”. <br> “Hoje (o diretor) fica numa pilha de documentos resolvendo a questão administrativa interna ao invés de estar cuidando da parte pedagógica”, diz Ratinho. Com isso, “nós estamos fazendo uma facilitação para o nosso diretor, para os nossos professores”, alega. “Professores que continuam sendo do Estado, os pedagogos que continuam sendo do Estado, o diretor continua sendo do Estado”, disse. <br> No entanto, na avaliação da APP, a parte pedagógica pode ficar prejudicada pela falta de vínculo entre os profissionais e a escola terceirizada caso o projeto seja aprovado. “Os professores, pela pressão que sofrerão, tendem a pedir remoção, isso porque o interesse da empresa é a obtenção de índices – que geram bonificações e mais lucros – e assim preferem contratar professores(as) pela CLT”. <br> Sem estabilidade, esses profissionais podem ser demitidos a qualquer momento, pelos mais diversos motivos, avalia a entidade. “Por mais precário que seja o contrato PSS, há uma garantia de contrato por um ou dois anos, o que não ocorrerá pela contratação CLT. Os professores também não terão garantia de hora-atividade e cumprirão carga horária cheia”, diz nota do sindicato. <br> O Blog Politicamente cita que, entre os pontos destacados no projeto, está que a empresa que vai administrar a gestão fica encarregada da parte administrativa e de infraestrutura, como a contratação de pessoal de limpeza, merenda e professores não efetivos. Para aprovar o projeto, Ratinho Junior já se reuniu com sua base de apoio na Alep para discutir a proposta. <br> Projeto similar ao Parceiros da Escola fracassou em sua votação em 2022 para privatizar 29 escolas paranaenses. Na ocasião, o governador tentou impor o projeto a partir de um processo de votação recheado de vícios, pressão e abuso de poder econômico. <br> Assim como todos os privatistas, Ratinho quer aprovar à toque de caixa a medida que terceiriza a educação pública. Para a oposição, a proposta do governo é absurda. “O governador Ratinho vai errar novamente. Errou ao terceirizar os funcionários de escola. E agora com a entrega de escolas públicas para a iniciativa privada”, afirma o deputado Professor Lemos (PT). <br> “Somos contra. Ele quer privatizar a administração de 200 escolas. Quer entregar dinheiro público para a empresa fazer a gestão das escolas. A proposta repassa R$ 800 por aluno para uma empresa”, critica o parlamentar. “Se ele vai propor isso, dizendo que vai diminuir o custo, não está sendo verdadeiro. Se ele aplicar isso a todas as escolas do Paraná, é maior do que está previsto em 2024 em toda educação”, avalia. <br> A proposta não visa melhorar a educação do Estado e representa o repasse de recursos públicos ao setor privado. “É apenas um modelo para tirar dinheiro público e repassar para empresas. São mais de R$ 2,4 bilhões para terceirização. Já vimos esse filme antes”, denuncia o deputado. “O estado gastava R$ 18 milhões com os funcionários de escola. Passou a gastar mais de R$ 40 milhões mensais, contratando menos funcionários, repassando lucro para apenas 14 empresários”, compara. <br> O Sindicato realiza assembleia neste sábado (25) para discutir e organizar a luta contra o projeto.</p>
+                <br><br>
             </div>
             <div class="creditos_autor">
                 <div class="data_noticia">
@@ -785,10 +782,10 @@ input:focus {
                         <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
                         <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
                     </svg>
-                    <p>21/10/2024</p>
+                    <p>28/05/2024</p>
                 </div>
                 <div class="autor">
-                    <h4>por: Diego Ficanha e João Henn</h4>
+                    <h4>por: João Nakamura</h4>
                 </div>
             </div>
             </div>
@@ -811,29 +808,27 @@ input:focus {
                     <!-- Comentários serão carregados aqui -->
                 </div>
             </div>
-
         <!--Mais noticias-->
         <section id="section">
             <!-- Primeira coluna de noticias semiPrincipais -->
         <div class="conteudo_semi_principal">
             <div class="conteudo1">         
-                <a href="./pages/Noticia_ratinho.html">
-                    <div class="noticia">
-                        <img src="img/Ratinho-escola.jpg" alt="" class="ratinho_jpg" width="300" height="150">
-                        <div class="noticia_texto">
-                        <h3>Ratinho Júnior anuncia privatização de 200 escolas públicas do Paraná</h3><br>
-                        <br>
-                        <div class="tempo" id="tempo">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-                                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
-                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
-                              </svg></a>
-                            <p>25/05/2024 Autor: João Nakamura</p>
-                        </div>
-                        </div>              
-                    </div>
-                    <hr>
-            <div class="noticia"><a href="./pages/Noticia_ryu.html">
+                <div class="noticia" onclick=""><a href="./pages/noticia-pm-do-parana-apreende.html">
+                    <img src="img/420.jfif" alt="">
+                    <div class="noticia_texto">
+                    <h3>PM do Paraná apreende nota de R$ 420,00</h3><br>
+                    <p>Saiba como identificar notas falsas</p><br>
+                    <div class="tempo" id="tempo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                      </svg></a>
+                    <p>06/07/2024 Autor: Pedro Figueiredo</p>
+                </div>
+                </div>
+            </div>
+            <hr>
+            <div class="noticia"><a href="./pages/noticia-ryu-the-runner.html">
                 <img src="img/SEMRÉH.jpg" alt="" class="ratinho_jpg" width="300" height="150">
                 <div class="noticia_texto">
                 <h3>Ryu, The Runner mergulha na mitologia grega para contar a própria história</h3><br>
@@ -851,7 +846,7 @@ input:focus {
         </div>
              <!-- Segunda coluna de noticias semiPrincipais -->
         <div class="conteudo2">          
-            <div class="noticia"><a href="./pages/Noticia_enchente.html">
+            <div class="noticia"><a href="./pages/noticia-enchentes-no-rio-grande-do-sul.html">
                 <img src="img/enchentes.png" alt="" class="enchentes">
                 <div class="noticia_texto">
                 <h3>Enchentes no Rio Grande do Sul: várias cidades inundam após temporais</h3><br>
@@ -865,7 +860,7 @@ input:focus {
                 </div>
             </div>
             <hr>
-            <div class="noticia"><a href="./pages/Noticia_descriminalizacao.html">
+            <div class="noticia"><a href="./pages/noticia-entenda-a-decisao-do-stf.html">
                 <img src="img/descriminalizacao.jfif" alt="" width="300px" height="150px">
                 <div class="noticia_texto">
                 <h3>STF decide a descriminalização da maconha</h3><br>
@@ -875,7 +870,7 @@ input:focus {
                         <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
                         <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
                       </svg></a>
-                    <p>04/07/2024 Autor: Graça Adjuto</p>
+                    <p>06/07/2024 Autor: Graça Adjuto</p>
                 </div>
                 </div>
             </div>   
@@ -935,7 +930,7 @@ input:focus {
                 <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
               </svg>
         </button>
-        
+        <!--Navegação-->
         <section class="Header_navigation">
 
             <a href="index.html">
@@ -946,19 +941,18 @@ input:focus {
             <div class="noticiasdiv">
                 <a href="#" id="dropdownButton">Noticias</a>
                 <div class="noticias_navigation" id="dropdown">
-                    <a href="./pages/Noticia_recentes.html">Recentes</a>
+                    <a href="./pages/noticias-recentes.html">Recentes</a>
                 </div>
 
             </div>
 
-            <a href="./pages/Criacao.html">
+            <a href="./pages/criacao-noticia.html">
             <div class="divNavigation">
             <p>Criar noticias</p>
             </div>
             </a>
 
-        </section>
-
+        </section> 
         <div class="noturno">
             <p>Modo noturno:</p>
             <div class="checkbox-wrapper-54">
@@ -967,8 +961,7 @@ input:focus {
                 <span class="slider"></span>
               </label>
             </div>
-      </div> 
-        </div>        
+      </div>   
     </div>
     <script>
         //Puxa as info
@@ -1056,7 +1049,7 @@ window.addEventListener('click', function(event) {
 function filtrar() {
     const divAdicionados = document.querySelector('.conteudoAdicionado h1')
     divAdicionados.style.display = 'none'
-
+    
     var input, filter, main, section, noticias, i, txtValue;
 
     input = document.getElementById('search');
@@ -1200,17 +1193,16 @@ function exibirNoticiasJSON(data) {
             <a href="./pages/Noticia_independente_JSON.html?id=${noticia.id}">
                 <img src="${noticia.imagem}" alt="" class="imagem-noticia" width="300" height="150">
                 <div class="noticia_texto">
-                    <h3>${noticia.titulo}</h3><br>
+                    <h3>${noticia.titulo}</h3><br></a>
                     <div class="tempo">
                         <p>${dataFormatada} Autor: ${noticia.autor}</p>
-                    </div><hr>
+                    </div>
                 </div>
-            </a>`;
+            `;
 
         conteudoJSON.appendChild(noticiaDiv);
     });
 }
-
     </script>
 </body>
 </html>

@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enchentes no RS</title>
+    <title>Policial Acusado de trafico</title>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <style>
         /*Cores*/
 :root{
@@ -35,10 +32,7 @@ hr{
     padding: 0;
 }
 body{
-    font-family: "Nunito", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: var(--color-branco);
     color: var(--color-preto);
     overflow-x: hidden;
@@ -120,9 +114,19 @@ header.shrink{
     border-radius: 20px;
     background-color: var(--color-branco);
     box-shadow: 1px 1px 10px var(--color-preto);
-    margin: 20px;
+    margin: 10px;
     cursor: pointer;
     transition: top 1s ease;
+}
+.Header_navigation a{
+    text-decoration: none;
+    color: var(--color-preto);
+    white-space: nowrap;
+    border-radius: 7px;
+    border-color: var(--color-preto);
+    padding: 3px;
+    margin: 5px;
+    font-weight: bold;
 }
 .Header_navigation p{
     text-decoration: none;
@@ -134,26 +138,8 @@ header.shrink{
     font-weight: bold;
     font-size: 22px;
 }
-.Header_navigation a{
-    text-decoration: none;
-    color: var(--color-preto);
-    white-space: nowrap;
-    border-radius: 7px;
-    border-color: var(--color-preto);
-    padding: 3px;
-    margin: 5px;
-    font-weight: bold;
-}
-.Header_navigation a{
-    text-decoration: none;
-    color: var(--color-preto);
-    white-space: nowrap;
-    border-radius: 7px;
-    border-color: var(--color-preto);
-    padding: 3px;
-    margin: 5px;
-    font-weight: bold;
-}
+
+
 .Header_navigation a:hover{
     color: var(--color-branco-imutavel);
     transform: scale(1.2)
@@ -177,24 +163,20 @@ header.shrink{
     border-radius: 20px;
     background-color: var(--color-branco);
     box-shadow: 1px 1px 10px var(--color-preto);
-    margin: 10px;
+    margin: 20px;
     cursor: pointer;
     font-size: 22px;
 }
-.noticiasdiv:hover{
-    color: var(--color-branco-imutavel);
-    transform: scale(1.2)}
 .noticias_navigation{
     display: none;
     position: absolute;
     border-radius: 2%;
-    background-color: gray;
+    background-color: var(--color-noticias-navigation);
     top: 45px;
     height: 34px;
     align-items: center;
     transition: top 0.3s ease;
     border-radius: 20px;
-    font-size: 15px;
 }
 .noticias_navigation2{
     display: flex;
@@ -511,12 +493,6 @@ footer h3{
 a{
     text-decoration: none;
 }
-.noticia_texto h3{
-    color: var(--color-texto-noticias);
-} 
-.noticia_texto p{
-    color: var(--color-texto-noticias);
-}
 /*COMENTARIOS*/
 .comentario {
     width: 90%;
@@ -744,15 +720,16 @@ input:focus {
     </style>
 </head>
 <body>
-
     <header id="header">
         <!--Menu-->
+        
         <div class="button_header">
             <button onclick="toggleSidebar()" class="btn_icon_header">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                 </svg>
             </button>
+            
         </div>
         <!--Sair-->
         <div class="leave"><a href="index.html">
@@ -764,7 +741,6 @@ input:focus {
         <div class="Header_logo">
             <h1>GØ</h1>
         </div>
-        
         <!--Barra de pesquisa-->
         <div class="search">
             <img src="img/lupa.png" alt="?">
@@ -776,16 +752,28 @@ input:focus {
         <!--Conteudo da noticia-->
         <div class="conteudo">
             <div class="titulo">
-                <h2>Enchentes no Rio Grande do Sul: várias cidades inundam após temporais</h2>
+                <h2>Policial vira réu acusado de agir como 'batedor' para traficante em rodovia do Paraná: 'Prevaleceu-se da condição de PM'</h2>
             </div>
             <div class="imagem_noticia">
-                <img src="img/enchentes.png" alt="">
+                <img src="img/Noticia 10.png" alt="">
             </div>
             <br>
             <hr>
             <br>
             <div class="conteudo_noticia">
-                <p>O Rio Grande do Sul mais uma vez enfrenta enchentes em 2023. Na semana em que parte do país atravessava uma intensa onda de calor, desde pelo menos quarta-feira (15) fortes tempestades atingiram várias cidades do estado gaúcho. Até o momento, os temporais deixaram quatro mortos, 63 feridos, 2.653 desabrigados e pelo menos 7.527 pessoas desalojadas. <br><br> Em Porto Alegre, capital do estado, o Guaíba chegou a 3,19 metros e atingiu o maior nível desde 1941, o que levou a Prefeitura a fechar as comportas do sistema de contenção de enchentes. Além disso, por causa da elevação do nível do rio, a Empresa de Trens Urbanos de Porto Alegre (Trensurb) também fechou três estações (Mercado, Rodoviária e São Pedro). <br><br> Para conter a inundação em Porto Alegre, cinco comportas foram fechadas na região do Cais Mauá, de acordo com a GZH. O sistema possui, ao todo, 14 portões. Desse total, oito ficam abertos e outros seis fechados permanentemente. O fechamento ocorre em momentos de alerta e serve para evitar o alagamento da cidade. <br><br> Além do Guaíba, a Defesa Civil do Rio Grande do Sul também emitiu alertas para inundações em outros rios, incluindo Jacuí, Uruguai, Caí, Taquari e Gravataí. Segundo previsão do Climatempo, a semana deve ter mais chuva em várias cidades do estado. <br><br><br> Por que choveu tanto no Rio Grande do Sul? <br><br> O forte temporal que atingiu várias cidades do Rio Grande do Sul a partir da última quarta-feira (15) foi consequência de um evento climático já esperado. Chamado de Complexo Convectivo de Mesoescala, o fenômeno é comum na primavera e caracteriza-se por um grande conjunto de nuvens muito carregadas, em formato circular e de longa duração. <br><br> Estes aglomerados de tempestades são identificados a partir de imagens de satélite, e podem atingir de dez a 20 quilômetros de altura. O nome é difícil, mas traduz justamente a união de várias áreas de tempestade em um mesmo sistema, podendo provocar chuvas volumosas, muito vento e granizo. Também não é raro o surgimento de tornados e microexplosões atmosféricas. <br><br> — Tudo começa entre a tarde e a noite, quando se formam múltiplas tempestades. Temos a Cordilheira dos Andes, a região do Pantanal como fonte de umidade e calor e a enorme massa de ar quente presa no Centro do país, tudo isso influencia o fenômeno. Esses temporais se fundem e formam esse enorme aglomerado de nuvens, em que uma tempestade ativa a outra — explica a meteorologista do Metsul, Estael Sias.</p>
+                <p>O policial militar do Paraná Luiz Paulo Breda, de 34 anos, virou réu na Justiça acusado de agir como "batedor" para um traficante de drogas.
+                    Ele foi preso no dia 15 de agosto em Laranjeiras do Sul, na região central do Paraná, após ser flagrado "escoltando" o carro de um traficante para informá-lo sobre fiscalizações e ajudá-lo a driblar as ações na BR-277.
+                    Além de Breda, também são réus no processo Bruno Mengue da Costa, que estava com o PM no carro da frente, e Douglas Cesar de Souza Aguilar, que dirigia outro carro que estava carregado com quase 51 kg de maconha. Saiba mais abaixo.
+                    Os três foram denunciados pelo Ministério Público (PM) e vão responder pelos crimes de transporte de drogas e associação com duas ou mais pessoas para viabilizar esse transporte, com agravante de emprego de arma de fogo e tráfico interestadual.
+                    No caso de Breda, há ainda o acréscimo da prática dos crimes prevalecendo-se da função pública de policial militar.
+                    "Incumbia aos co-denunciados Luiz Paulo Breda e Bruno Mengue da Costa trafegar à frente do denunciado Douglas Cesar de Souza Aguilar e informá-lo acerca de eventuais fiscalizações de trânsito ou outras operações policiais. [...] Na função de 'batedor', o denunciado Luiz Paulo Breda prevaleceu-se dacondição de Policial Militar, identificando-se como tal para os Policiais Rodoviários Federais que o abordaram, a fim de inspirar confiança. Ademais, Luiz portava arma de fogo institucional", ressaltou o MP, na denúncia.
+                    O advogado de defesa de Bruno Mengue, Eduardo Luiz Medeiros, alega que o réu é inocente e que desconhecia o transporte da droga apreendida. "Bruno estava apenas de carona e não tinha conhecimento nenhum dos fatos", afirma
+                    Ao GØ, a Polícia Rodoviária Federal (PRF) informou que o setor de inteligência da corporação identificou que dois carros poderiam estar transportando itens ilícitos na rodovia e uma equipe localizou ambos parados em um posto de combustível na beira da rodovia.
+                    "À aproximação da equipe policial, um homem apresentou-se como condutor de um dos carros e informou ser Policial Militar. Enquanto isso, o outro veículo arrancou em direção à rodovia", explicou a corporação.
+                    Os policiais, então, perseguiram o carro que foi para a rodovia e, ao conseguir abordá-lo, encontraram mais de 50 kg de maconha.
+                    Ainda de acordo com a PRF, o motorista foi preso por tráfico de drogas e informou que o carro de Breda realizava a função de “batedor” para o transporte; ou seja, escoltava o veículo para tentar driblar fiscalizações policiais.
+                    A PRF afirma que voltou ao posto de combustíveis, mas Breda não estava mais no local.   
+                </p>
             </div>
             <div class="creditos_autor">
                 <div class="data_noticia">
@@ -793,10 +781,10 @@ input:focus {
                         <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
                         <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
                     </svg>
-                    <p>28/05/2024</p>
+                    <p>21/10/2024</p>
                 </div>
                 <div class="autor">
-                    <h4>por: Silvio Avila</h4>
+                    <h4>por: Marcia Araujo</h4>
                 </div>
             </div>
             </div>
@@ -824,23 +812,24 @@ input:focus {
         <section id="section">
             <!-- Primeira coluna de noticias semiPrincipais -->
         <div class="conteudo_semi_principal">
-            <div class="conteudo1"> <a href="./pages/Noticia_420.html">
-                <div class="noticia"  onclick="">
-                    <img src="img/420.jfif" alt="">
-                    <div class="noticia_texto">
-                    <h3>PM do Paraná apreende nota de R$ 420,00</h3><br>
-                    <p>Saiba como identificar notas falsas</p><br>
-                    <div class="tempo" id="tempo">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-                            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
-                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
-                      </svg></a>
-                    <p>06/07/2024 Autor: Pedro Figueiredo</p>
-                </div>
-                </div>
-            </div>
-            <hr>
-            <div class="noticia"><a href="./pages/Noticia_ryu.html">
+            <div class="conteudo1">         
+                <a href="./pages/noticia-ratinho-junior-anuncia-privatizacao.html">
+                    <div class="noticia">
+                        <img src="img/Ratinho-escola.jpg" alt="" class="ratinho_jpg" width="300" height="150">
+                        <div class="noticia_texto">
+                        <h3>Ratinho Júnior anuncia privatização de 200 escolas públicas do Paraná</h3><br>
+                        <br>
+                        <div class="tempo" id="tempo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                              </svg></a>
+                            <p>25/05/2024 Autor: João Nakamura</p>
+                        </div>
+                        </div>              
+                    </div>
+                    <hr>
+            <div class="noticia"><a href="./pages/noticia-ryu-the-runner.html">
                 <img src="img/SEMRÉH.jpg" alt="" class="ratinho_jpg" width="300" height="150">
                 <div class="noticia_texto">
                 <h3>Ryu, The Runner mergulha na mitologia grega para contar a própria história</h3><br>
@@ -858,23 +847,21 @@ input:focus {
         </div>
              <!-- Segunda coluna de noticias semiPrincipais -->
         <div class="conteudo2">          
-            <a href="./pages/Noticia_ratinho.html">
-                <div class="noticia">
-                    <img src="img/Ratinho-escola.jpg" alt="" class="ratinho_jpg" width="300" height="150">
-                    <div class="noticia_texto">
-                    <h3>Ratinho Júnior anuncia privatização de 200 escolas públicas do Paraná</h3><br>
-                    <br>
-                    <div class="tempo" id="tempo">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-                            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
-                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
-                          </svg></a>
-                        <p>25/05/2024 Autor: João Nakamura</p>
-                    </div>
-                    </div>              
+            <div class="noticia"><a href="./pages/noticia-enchentes-no-rio-grande-do-sul.html">
+                <img src="img/enchentes.png" alt="" class="enchentes">
+                <div class="noticia_texto">
+                <h3>Enchentes no Rio Grande do Sul: várias cidades inundam após temporais</h3><br>
+                <div class="tempo" id="tempo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                      </svg></a>
+                    <p>20/11/2023 Autor: Silvio Avila</p>
                 </div>
+                </div>
+            </div>
             <hr>
-            <div class="noticia"><a href="./pages/Noticia_descriminalizacao.html">
+            <div class="noticia"><a href="./pages/noticia-entenda-a-decisao-do-stf.html">
                 <img src="img/descriminalizacao.jfif" alt="" width="300px" height="150px">
                 <div class="noticia_texto">
                 <h3>STF decide a descriminalização da maconha</h3><br>
@@ -884,7 +871,7 @@ input:focus {
                         <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
                         <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
                       </svg></a>
-                    <p>06/07/2024 Autor: Graça Adjuto</p>
+                    <p>04/07/2024 Autor: Graça Adjuto</p>
                 </div>
                 </div>
             </div>   
@@ -944,7 +931,7 @@ input:focus {
                 <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
               </svg>
         </button>
-        <!--Navegação-->
+        
         <section class="Header_navigation">
 
             <a href="index.html">
@@ -955,17 +942,19 @@ input:focus {
             <div class="noticiasdiv">
                 <a href="#" id="dropdownButton">Noticias</a>
                 <div class="noticias_navigation" id="dropdown">
-                    <a href="./pages/Noticia_recentes.html">Recentes</a>
+                    <a href="./pages/noticias-recentes.html">Recentes</a>
                 </div>
+
             </div>
 
-            <a href="./pages/Criacao.html">
+            <a href="./pages/criacao-noticia.html">
             <div class="divNavigation">
             <p>Criar noticias</p>
             </div>
             </a>
 
-        </section>   
+        </section>
+
         <div class="noturno">
             <p>Modo noturno:</p>
             <div class="checkbox-wrapper-54">
@@ -974,7 +963,8 @@ input:focus {
                 <span class="slider"></span>
               </label>
             </div>
-      </div>    
+      </div> 
+        </div>        
     </div>
     <script>
         //Puxa as info
@@ -1216,6 +1206,7 @@ function exibirNoticiasJSON(data) {
         conteudoJSON.appendChild(noticiaDiv);
     });
 }
+
     </script>
 </body>
 </html>

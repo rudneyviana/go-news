@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descriminalização da maconha</title>
+    <title>Fábrica da Ford na Bahia</title>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <style>
         /*Cores*/
 :root{
@@ -35,13 +32,10 @@ hr{
     padding: 0;
 }
 body{
+    font-family: Arial, Helvetica, sans-serif;
     background-color: var(--color-branco);
     color: var(--color-preto);
     overflow-x: hidden;
-    font-family: "Nunito", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
 }
 /*Começo da header*/
 header{
@@ -120,19 +114,9 @@ header.shrink{
     border-radius: 20px;
     background-color: var(--color-branco);
     box-shadow: 1px 1px 10px var(--color-preto);
-    margin: 20px;
+    margin: 10px;
     cursor: pointer;
     transition: top 1s ease;
-}
-.Header_navigation p{
-    text-decoration: none;
-    color: var(--color-preto);
-    white-space: nowrap;
-    border-color: var(--color-preto);
-    padding: 3px;
-    margin: 5px;
-    font-weight: bold;
-    font-size: 22px;
 }
 .Header_navigation a{
     text-decoration: none;
@@ -144,6 +128,17 @@ header.shrink{
     margin: 5px;
     font-weight: bold;
 }
+.Header_navigation p{
+    text-decoration: none;
+    color: var(--color-preto);
+    white-space: nowrap;
+    border-color: var(--color-preto);
+    padding: 3px;
+    margin: 5px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
 
 .Header_navigation a:hover{
     color: var(--color-branco-imutavel);
@@ -168,24 +163,20 @@ header.shrink{
     border-radius: 20px;
     background-color: var(--color-branco);
     box-shadow: 1px 1px 10px var(--color-preto);
-    margin: 10px;
+    margin: 20px;
     cursor: pointer;
     font-size: 22px;
 }
-.noticiasdiv:hover{
-    color: var(--color-branco-imutavel);
-    transform: scale(1.2)}
 .noticias_navigation{
     display: none;
     position: absolute;
     border-radius: 2%;
-    background-color: gray;
+    background-color: var(--color-noticias-navigation);
     top: 45px;
     height: 34px;
     align-items: center;
     transition: top 0.3s ease;
     border-radius: 20px;
-    font-size: 15px;
 }
 .noticias_navigation2{
     display: flex;
@@ -729,9 +720,9 @@ input:focus {
     </style>
 </head>
 <body>
-
     <header id="header">
         <!--Menu-->
+        
         <div class="button_header">
             <button onclick="toggleSidebar()" class="btn_icon_header">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
@@ -746,13 +737,10 @@ input:focus {
                 <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5"/>
               </svg></a>
         </div>
-        
         <!--Logo-->
         <div class="Header_logo">
             <h1>GØ</h1>
         </div>
-        <!--Navegação-->
-        
         <!--Barra de pesquisa-->
         <div class="search">
             <img src="img/lupa.png" alt="?">
@@ -764,16 +752,32 @@ input:focus {
         <!--Conteudo da noticia-->
         <div class="conteudo">
             <div class="titulo">
-                <h2>Entenda a decisão do STF sobre descriminalização do porte de maconha</h2>
+                <h2>Fábrica da Ford na Bahia Pode ser Comprada por Empresa Chinesa.</h2>
             </div>
             <div class="imagem_noticia">
-                <img src="img/descriminalizacao2.png" alt="">
+                <img src="img/Noticia 5.png" alt="">
             </div>
             <br>
             <hr>
             <br>
             <div class="conteudo_noticia">
-                <p>Após nove anos de sucessivas interrupções, por 6 votos a 3, o Supremo Tribunal Federal (STF) finalizou nesta quarta-feira (26) o julgamento que descriminalizou o porte de maconha para uso pessoal e fixou a quantia de 40 gramas para diferenciar usuários de traficantes. <br><br> Após nove anos de sucessivas interrupções, por 6 votos a 3, o Supremo Tribunal Federal (STF) finalizou nesta quarta-feira (26) o julgamento que descriminalizou o porte de maconha para uso pessoal e fixou a quantia de 40 gramas para diferenciar usuários de traficantes. <br><br> Com a decisão, não comete infração penal quem adquirir, guardar, tiver em depósito, transportar ou trouxer consigo até 40 gramas de maconha para consumo pessoal. A decisão deverá ser aplicada em todo o país após a publicação da ata do julgamento, que deve ocorrer nos próximos dias. <br><br> A decisão do Supremo não legaliza o porte de maconha. O porte para uso pessoal continua como comportamento ilícito, ou seja, permanece proibido fumar a droga em local público, mas as consequências passam a ter natureza administrativa e não criminal. <br><br> O Supremo julgou a constitucionalidade do Artigo 28 da Lei de Drogas (Lei 11.343/2006). Para diferenciar usuários e traficantes, a norma prevê penas alternativas de prestação de serviços à comunidade, advertência sobre os efeitos das drogas e comparecimento obrigatório a curso educativo. <br><br><br> A lei deixou de prever a pena de prisão, mas manteve a criminalização. Dessa forma, antes da decisão da Corte, usuários de drogas eram alvos de inquérito policial e processos judiciais que buscavam a condenação para o cumprimento dessas penas alternativas. <br><br>Punição administrativa <br> A Corte manteve a validade da Lei de Drogas, mas entendeu que as consequências são administrativas, deixando de valer a possibilidade de cumprimento de prestação de serviços comunitários. <br><br> A Corte manteve a validade da Lei de Drogas, mas entendeu que as consequências são administrativas, deixando de valer a possibilidade de cumprimento de prestação de serviços comunitários. <br> A advertência e presença obrigatória em curso educativo seguem mantidas e deverão ser aplicadas pela Justiça em procedimentos administrativos, sem repercussão penal. <br>O registro de antecedentes criminais também não poderá ser avaliado contra os usuários.<br><br> Usuário x Traficante <br><br> Usuário x Traficante <br><br> A Corte fixou que deve ser de 40 gramas ou seis plantas fêmeas de cannabis a quantidade de maconha para caracterizar porte para uso pessoal e diferenciar usuários e traficantes. <br><br> A Corte fixou que deve ser de 40 gramas ou seis plantas fêmeas de cannabis a quantidade de maconha para caracterizar porte para uso pessoal e diferenciar usuários e traficantes. <br><br> O cálculo foi feito com base nos votos dos ministros que fixaram a quantia entre 25 e 60 gramas nos votos favoráveis à descriminalização.  A partir de uma média entre as sugestões, a quantidade de 40 gramas foi fixada. <br><br><br> Delegacia <br><br> A decisão não impede abordagens policiais, e a apreensão da droga poderá ser feita pelos agentes. <br>A decisão não impede abordagens policiais, e a apreensão da droga poderá ser feita pelos agentes. <br> Os usuários poderão ser levados para uma delegacia quando forem abordados pela polícia portando maconha. Caberá ao delegado pesar a droga, verificar se a situação realmente pode ser configurada como porte para uso pessoal. Em seguida, o usuário será notificado a comparecer à Justiça. <br><br><br> Revisão <br><br> Revisão <br><br> Após o julgamento, o presidente do STF, Luís Roberto Barroso, disse que a decisão pode retroagir para atingir pessoas condenadas pela Justiça. <br><br> Após o julgamento, o presidente do STF, Luís Roberto Barroso, disse que a decisão pode retroagir para atingir pessoas condenadas pela Justiça. <br><br> "A regra básica em matéria de Direito Penal é que a lei não retroage se ela agravar a situação de quem é acusado ou esteja preso. Para beneficiar, é possível", afirmou. </p>
+                <p>A Ford vendeu sua fábrica em Camaçari, na Bahia, para o governo estadual, embora o valor da transação não tenha sido divulgado.
+                    Objetivo da Venda
+                    A montadora americana afirmou que a venda visa simplificar e agilizar o processo de transferência da propriedade da fábrica, beneficiando o Estado e a comunidade local.
+                    Facilitação das Negociações com a BYD
+                    Segundo a Agência Estado, o acordo entre a Ford e o governo da Bahia facilitará as negociações com a empresa chinesa BYD, que há mais de um ano está interessada na compra das instalações. Anteriormente, questões burocráticas e técnicas dificultavam o fechamento do negócio.
+                    Papel do Governo da Bahia
+                    Agora, o governo da Bahia negociará diretamente com a BYD, que recentemente anunciou um investimento de R$ 3 bilhões no estado, incluindo a construção de três fábricas: uma para automóveis, outra para caminhões e chassis de ônibus, e uma terceira para processamento de lítio.
+                    Incentivos Fiscais
+                    A BYD também está aguardando decisões sobre incentivos fiscais herdados da Ford, que fazem parte do regime especial para montadoras no Nordeste, válido até 2025.
+                    Planejamento de Investimento
+                    Em nota, a BYD confirmou que continua com os planos de investir na unidade industrial de Camaçari, mantendo as negociações com o governo da Bahia. A empresa informou que seu futuro complexo em Camaçari produzirá automóveis híbridos e elétricos, com uma capacidade estimada de 150 mil unidades por ano.
+                    Expansão e Geração de Empregos
+                    A BYD acrescentou que outra planta fabricará caminhões elétricos e chassis para ônibus, atendendo os mercados das regiões Norte e Nordeste. A terceira unidade será dedicada ao processamento de células de lítio e ferro fosfato, com expectativa de gerar 5 mil empregos.
+                    Desenvolvimento Regional
+                    “O novo complexo da BYD será um polo de atração para diversos fornecedores, tanto de peças técnicas quanto de serviços. A empresa pretende contribuir para o desenvolvimento regional, priorizando fornecedores locais,” destacou a BYD.
+                    Esses investimentos refletem um esforço maior para revitalizar a indústria automotiva na região, promover o crescimento econômico e criar novas oportunidades de emprego na Bahia.                    
+                </p>
             </div>
             <div class="creditos_autor">
                 <div class="data_noticia">
@@ -781,10 +785,10 @@ input:focus {
                         <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
                         <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
                     </svg>
-                    <p>28/05/2024</p>
+                    <p>24/10/2024</p>
                 </div>
                 <div class="autor">
-                    <h4>por: Graça Adjuto</h4>
+                    <h4>por: Abner Teixeira </h4>
                 </div>
             </div>
             </div>
@@ -807,28 +811,28 @@ input:focus {
                     <!-- Comentários serão carregados aqui -->
                 </div>
             </div>
-
         <!--Mais noticias-->
         <section id="section">
             <!-- Primeira coluna de noticias semiPrincipais -->
         <div class="conteudo_semi_principal">
             <div class="conteudo1">         
-                <div class="noticia" onclick=""><a href="./pages/Noticia_420.html">
-                    <img src="img/420.jfif" alt="">
-                    <div class="noticia_texto">
-                    <h3>PM do Paraná apreende nota de R$ 420,00</h3><br>
-                    <p>Saiba como identificar notas falsas</p><br>
-                    <div class="tempo" id="tempo">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-                            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
-                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
-                      </svg></a>
-                    <p>06/07/2024 Autor: Pedro Figueiredo</p>
-                </div>
-                </div>
-            </div>
-            <hr>
-            <div class="noticia"><a href="./pages/Noticia_ryu.html">
+                <a href="./pages/noticia-ratinho-junior-anuncia-privatizacao.html">
+                    <div class="noticia">
+                        <img src="img/Ratinho-escola.jpg" alt="" class="ratinho_jpg" width="300" height="150">
+                        <div class="noticia_texto">
+                        <h3>Ratinho Júnior anuncia privatização de 200 escolas públicas do Paraná</h3><br>
+                        <br>
+                        <div class="tempo" id="tempo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                              </svg></a>
+                            <p>25/05/2024 Autor: João Nakamura</p>
+                        </div>
+                        </div>              
+                    </div>
+                    <hr>
+            <div class="noticia"><a href="./pages/noticia-ryu-the-runner.html">
                 <img src="img/SEMRÉH.jpg" alt="" class="ratinho_jpg" width="300" height="150">
                 <div class="noticia_texto">
                 <h3>Ryu, The Runner mergulha na mitologia grega para contar a própria história</h3><br>
@@ -846,7 +850,7 @@ input:focus {
         </div>
              <!-- Segunda coluna de noticias semiPrincipais -->
         <div class="conteudo2">          
-            <div class="noticia"><a href="./pages/Noticia_enchente.html">
+            <div class="noticia"><a href="./pages/noticia-enchentes-no-rio-grande-do-sul.html">
                 <img src="img/enchentes.png" alt="" class="enchentes">
                 <div class="noticia_texto">
                 <h3>Enchentes no Rio Grande do Sul: várias cidades inundam após temporais</h3><br>
@@ -860,22 +864,21 @@ input:focus {
                 </div>
             </div>
             <hr>
-            <a href="./pages/Noticia_ratinho.html">
-                <div class="noticia">
-                    <img src="img/Ratinho-escola.jpg" alt="" class="ratinho_jpg" width="300" height="150">
-                    <div class="noticia_texto">
-                    <h3>Ratinho Júnior anuncia privatização de 200 escolas públicas do Paraná</h3><br>
-                    <br>
-                    <div class="tempo" id="tempo">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-                            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
-                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
-                          </svg></a>
-                        <p>25/05/2024 Autor: João Nakamura</p>
-                    </div>
-                    </div>              
+            <div class="noticia"><a href="./pages/noticia-entenda-a-decisao-do-stf.html">
+                <img src="img/descriminalizacao.jfif" alt="" width="300px" height="150px">
+                <div class="noticia_texto">
+                <h3>STF decide a descriminalização da maconha</h3><br>
+                <br>
+                <div class="tempo" id="tempo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                      </svg></a>
+                    <p>04/07/2024 Autor: Graça Adjuto</p>
                 </div>
-                <hr>    
+                </div>
+            </div>   
+            <hr>    
         </div>
     </div>
     <div class="noticiasExternas"> 
@@ -931,6 +934,7 @@ input:focus {
                 <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
               </svg>
         </button>
+        
         <section class="Header_navigation">
 
             <a href="index.html">
@@ -941,18 +945,20 @@ input:focus {
             <div class="noticiasdiv">
                 <a href="#" id="dropdownButton">Noticias</a>
                 <div class="noticias_navigation" id="dropdown">
-                    <a href="./pages/Noticia_recentes.html">Recentes</a>
+                    <a href="./pages/noticias-recentes.html">Recentes</a>
                 </div>
+
 
             </div>
 
-            <a href="./pages/Criacao.html">
+            <a href="./pages/criacao-noticia.html">
             <div class="divNavigation">
             <p>Criar noticias</p>
             </div>
             </a>
 
         </section>
+
         <div class="noturno">
             <p>Modo noturno:</p>
             <div class="checkbox-wrapper-54">
@@ -1204,6 +1210,7 @@ function exibirNoticiasJSON(data) {
         conteudoJSON.appendChild(noticiaDiv);
     });
 }
+
     </script>
 </body>
 </html>

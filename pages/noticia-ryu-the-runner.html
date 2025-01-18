@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farelo de soja</title>
+    <title>Ryu, The Runner</title>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <style>
         /*Cores*/
 :root{
-    --color-roxo: #AEA8B0;
+    --color-roxo:#AEA8B0;
     --color-roxo2:rgb(185, 24, 185);
     --color-branco: white;
     --color-branco-imutavel: white;
@@ -42,10 +39,6 @@ body{
     background-color: var(--color-branco);
     color: var(--color-preto);
     overflow-x: hidden;
-    font-family: "Nunito", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
 }
 /*Começo da header*/
 header{
@@ -128,16 +121,6 @@ header.shrink{
     cursor: pointer;
     transition: top 1s ease;
 }
-.Header_navigation a{
-    text-decoration: none;
-    color: var(--color-preto);
-    white-space: nowrap;
-    border-radius: 7px;
-    border-color: var(--color-preto);
-    padding: 3px;
-    margin: 5px;
-    font-weight: bold;
-}
 .Header_navigation p{
     text-decoration: none;
     color: var(--color-preto);
@@ -148,8 +131,16 @@ header.shrink{
     font-weight: bold;
     font-size: 22px;
 }
-
-
+.Header_navigation a{
+    text-decoration: none;
+    color: var(--color-preto);
+    white-space: nowrap;
+    border-radius: 7px;
+    border-color: var(--color-preto);
+    padding: 3px;
+    margin: 5px;
+    font-weight: bold;
+}
 .Header_navigation a:hover{
     color: var(--color-branco-imutavel);
     transform: scale(1.2)
@@ -177,16 +168,21 @@ header.shrink{
     cursor: pointer;
     font-size: 22px;
 }
+.noticiasdiv:hover{
+    color: var(--color-branco-imutavel);
+    transform: scale(1.2)}
+
 .noticias_navigation{
     display: none;
     position: absolute;
     border-radius: 2%;
-    background-color: var(--color-noticias-navigation);
+    background-color: gray;
     top: 45px;
     height: 34px;
     align-items: center;
     transition: top 0.3s ease;
     border-radius: 20px;
+    font-size: 15px;
 }
 .noticias_navigation2{
     display: flex;
@@ -246,7 +242,7 @@ header.shrink{
 }
 .noturno p{
     text-decoration: none;
-    color: var(--color-texto-noticias);
+    color: var(--color-preto);
     white-space: nowrap;
     border-color: var(--color-preto);
     padding: 3px;
@@ -730,16 +726,15 @@ input:focus {
     </style>
 </head>
 <body>
+
     <header id="header">
         <!--Menu-->
-        
         <div class="button_header">
             <button onclick="toggleSidebar()" class="btn_icon_header">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                 </svg>
             </button>
-            
         </div>
         <!--Sair-->
         <div class="leave"><a href="index.html">
@@ -751,10 +746,11 @@ input:focus {
         <div class="Header_logo">
             <h1>GØ</h1>
         </div>
+        
         <!--Barra de pesquisa-->
         <div class="search">
             <img src="img/lupa.png" alt="?">
-            <input type="text" placeholder="Pesquisar..."  id="search" onkeyup="filtrar()">
+            <input type="text" placeholder="Pesquisar..." id="search" onkeyup="filtrar()">
         </div>        
     </header>
 
@@ -762,25 +758,23 @@ input:focus {
         <!--Conteudo da noticia-->
         <div class="conteudo">
             <div class="titulo">
-                <h2>300 toneladas de farelo de soja misturadas com areia, cascas e outros resíduos são apreendidas no Paraná
-                </h2>
+                <h2>Ryu, The Runner mergulha na mitologia grega para contar a própria história</h2>
             </div>
             <div class="imagem_noticia">
-                <img src="img/Noticia 2.png" alt="">
+                <img src="img/SEMRÉH.jpg" alt="">
             </div>
             <br>
             <hr>
             <br>
             <div class="conteudo_noticia">
-                <p>Três pessoas foram presas em flagrante suspeitas de envolvimento em esquema de adulteração de farelo de soja para cargas destinadas à exportação. A prisão, realizada pela Polícia Civil do Paraná (PC-PR), ocorreu na manhã desta quinta-feira (24), em um barracão localizado em Curitiba, utilizado para adulterar cargas destinadas ao Porto de Paranaguá, no litoral.
-                    A corporação explica que o farelo de soja era parcialmente substituído por materiais como areia, cascas e outros resíduos. A adulteração compromete a qualidade do produto.
-                    A ação, em conjunto com o Ministério da Agricultura, Pecuária e Abastecimento (MAPA), apreendeu também um trator avaliado em mais de R$ 700 mil, um caminhão e materiais utilizados no processo de falsificação.
-                    Conforme a polícia, as investigações tiveram início após denúncias de que caminhoneiros desviavam a rota original da viagem para adulterar as cargas.
-                    O barracão estava sendo monitorado pelas equipes policiais que identificaram um fluxo irregular de caminhões.
-                    Os suspeitos foram autuados por por corromper, adulterar, falsificar ou alterar substâncias alimentícias destinadas ao consumo. As penas podem chegar a oito anos de prisão.
-                    A polícia tenta identificar outros envolvidos no crime.
-                    Segundo o MAPA, o Brasil é o maior exportador de soja no mundo e que o crime pode comprometer a imagem do país com fornecedor seguro e confiável no mercado internacional.
-                </p>
+                <p>Chegou às plataformas de áudio na última semana o álbum SEMRÉH (2024), de Ryu, The Runner. O artista baiano usou a mitologia grega - mais especificamente a história de Hermes - para falar sobre a própria história ao longo das nove faixas do disco.
+                    "Sempre gostei muito da mitologia grega, mas a ideia mesmo do Hermes veio de um ex-relacionamento meu. Minha ex-parceira tinha uma tatuagem do deus Hermes, porque também tem um significado para ela, e ela acabou me inspirando e me dando o ponto de partida," conta o artista. </p>
+                <br><br>
+                <p>O artista vê uma relação entre o mito e a própria vida e explica que Hermes "não é só o deus da velocidade, é também o mensageiro, o deus dos ladrões. É o deus das fortunas repentinas," relata</p>
+                <p>Se por um lado, Ryu busca inspiração no imaginário grego, por outro, a realidade também o ajuda a criar: "Busco me inspirar mais em situações, que passei ou que vi um parceiro passando. Então acho que me inspiro mais em momentos, sabe? Algo acontece e de lá saí uma música."</p>
+                <br><br>
+                <p>Com uma carreira relativamente nova, Ryu vê no lançamento de SEMRÉH uma maneira de se estabelecer no meio artístico. "O pessoal já sabe quem eu sou, tem uma galera que me acompanha, mas ainda tem muito caminho dentro da cena. Então acho que é o momento de ser visto mesmo, me fincar ali e me manter."</p>
+                <br><br>
             </div>
             <div class="creditos_autor">
                 <div class="data_noticia">
@@ -788,13 +782,14 @@ input:focus {
                         <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
                         <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
                     </svg>
-                    <p>24/10/2024</p>
+                    <p>28/05/2024</p>
                 </div>
                 <div class="autor">
-                    <h4>por: Gabriel Nakamura</h4>
+                    <h4>por: Pedro Figueiredo</h4>
                 </div>
             </div>
             </div>
+
             <div class="comentario">
                 <h2>Deixe seu comentário</h2>
                 <form id="commentForm" class="commentForm">
@@ -820,33 +815,32 @@ input:focus {
             <!-- Primeira coluna de noticias semiPrincipais -->
         <div class="conteudo_semi_principal">
             <div class="conteudo1">         
-                <a href="./pages/Noticia_ratinho.html">
-                    <div class="noticia">
-                        <img src="img/Ratinho-escola.jpg" alt="" class="ratinho_jpg" width="300" height="150">
-                        <div class="noticia_texto">
-                        <h3>Ratinho Júnior anuncia privatização de 200 escolas públicas do Paraná</h3><br>
-                        <br>
-                        <div class="tempo" id="tempo">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-                                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
-                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
-                              </svg></a>
-                            <p>25/05/2024 Autor: João Nakamura</p>
-                        </div>
-                        </div>              
-                    </div>
-                    <hr>
-            <div class="noticia"><a href="./pages/Noticia_ryu.html">
-                <img src="img/SEMRÉH.jpg" alt="" class="ratinho_jpg" width="300" height="150">
+                <div class="noticia" onclick=""><a href="./pages/noticia-pm-do-parana-apreende.html">
+                    <img src="img/420.jfif" alt="">
+                    <div class="noticia_texto">
+                    <h3>PM do Paraná apreende nota de R$ 420,00</h3><br>
+                    <p>Saiba como identificar notas falsas</p><br>
+                    <div class="tempo" id="tempo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                      </svg></a>
+                    <p>06/07/2024 Autor: Pedro Figueiredo</p>
+                </div>
+                </div>
+            </div>
+            <hr>
+            <div class="noticia"><a href="./pages/noticia-ratinho-junior-anuncia-privatizacao.html">
+                <img src="img/Ratinho-escola.jpg" alt="" class="ratinho_jpg" width="300" height="150">
                 <div class="noticia_texto">
-                <h3>Ryu, The Runner mergulha na mitologia grega para contar a própria história</h3><br>
+                <h3>Ratinho Júnior anuncia privatização de 200 escolas públicas do Paraná</h3><br>
                 <br>
                 <div class="tempo" id="tempo">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
                         <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
                         <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
                       </svg></a>
-                    <p>28/05/2024 Autor: Pedro Figueiredo</p>
+                    <p>25/05/2024 Autor: João Nakamura</p>
                 </div>
                 </div>              
             </div>
@@ -854,7 +848,7 @@ input:focus {
         </div>
              <!-- Segunda coluna de noticias semiPrincipais -->
         <div class="conteudo2">          
-            <div class="noticia"><a href="./pages/Noticia_enchente.html">
+            <div class="noticia"><a href="./pages/noticia-enchentes-no-rio-grande-do-sul.html">
                 <img src="img/enchentes.png" alt="" class="enchentes">
                 <div class="noticia_texto">
                 <h3>Enchentes no Rio Grande do Sul: várias cidades inundam após temporais</h3><br>
@@ -868,7 +862,7 @@ input:focus {
                 </div>
             </div>
             <hr>
-            <div class="noticia"><a href="./pages/Noticia_descriminalizacao.html">
+            <div class="noticia"><a href="./pages/noticia-entenda-a-decisao-do-stf.html">
                 <img src="img/descriminalizacao.jfif" alt="" width="300px" height="150px">
                 <div class="noticia_texto">
                 <h3>STF decide a descriminalização da maconha</h3><br>
@@ -878,7 +872,7 @@ input:focus {
                         <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
                         <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
                       </svg></a>
-                    <p>04/07/2024 Autor: Graça Adjuto</p>
+                    <p>06/07/2024 Autor: Graça Adjuto</p>
                 </div>
                 </div>
             </div>   
@@ -930,7 +924,7 @@ input:focus {
             </div>
         </div>
     </footer>
-    
+
     <!-- Barra lateral (SEMPRE ABAIXO, PARA REALIZAR A SOBREPOSIÇÃO)-->
     <div class="sidebar" id="sidebar">
         <button onclick="toggleSidebar()" class="btn_icon_header_x">
@@ -938,7 +932,7 @@ input:focus {
                 <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
               </svg>
         </button>
-        
+        <!--Navegação-->
         <section class="Header_navigation">
 
             <a href="index.html">
@@ -949,18 +943,18 @@ input:focus {
             <div class="noticiasdiv">
                 <a href="#" id="dropdownButton">Noticias</a>
                 <div class="noticias_navigation" id="dropdown">
-                    <a href="./pages/Noticia_recentes.html">Recentes</a>
+                    <a href="./pages/noticias-recentes.html">Recentes</a>
                 </div>
+
             </div>
 
-            <a href="./pages/Criacao.html">
+            <a href="./pages/criacao-noticia.html">
             <div class="divNavigation">
             <p>Criar noticias</p>
             </div>
             </a>
 
         </section>
-
         <div class="noturno">
             <p>Modo noturno:</p>
             <div class="checkbox-wrapper-54">
@@ -969,9 +963,7 @@ input:focus {
                 <span class="slider"></span>
               </label>
             </div>
-      </div> 
-        </div>        
-    </div>
+      </div>
     <script>
         //Puxa as info
 var html             = document.querySelector('html')
@@ -1058,7 +1050,7 @@ window.addEventListener('click', function(event) {
 function filtrar() {
     const divAdicionados = document.querySelector('.conteudoAdicionado h1')
     divAdicionados.style.display = 'none'
-
+    
     var input, filter, main, section, noticias, i, txtValue;
 
     input = document.getElementById('search');
@@ -1202,17 +1194,16 @@ function exibirNoticiasJSON(data) {
             <a href="./pages/Noticia_independente_JSON.html?id=${noticia.id}">
                 <img src="${noticia.imagem}" alt="" class="imagem-noticia" width="300" height="150">
                 <div class="noticia_texto">
-                    <h3>${noticia.titulo}</h3><br>
+                    <h3>${noticia.titulo}</h3><br></a>
                     <div class="tempo">
                         <p>${dataFormatada} Autor: ${noticia.autor}</p>
-                    </div><hr>
-                </div>
-            </a>`;
+                    </div>
+                </div
+            `;
 
         conteudoJSON.appendChild(noticiaDiv);
     });
 }
-
     </script>
 </body>
 </html>
