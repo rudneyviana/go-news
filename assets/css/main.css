@@ -8,6 +8,8 @@
     --color-texto-noticias: black;
     --color-noticias-navigation: rgb(139,83,143);
     --color-search: black;
+    --color-header-a: rgb(174, 166, 175);
+    --color-roxinho: #A0A0A06B;
 }
 /*Cor da linha horizontal, presente nas noticias semiPrincipais*/
 hr{
